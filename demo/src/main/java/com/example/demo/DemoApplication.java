@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.chap03.used.Greet;
+import com.example.demo.chapter03.used.Greet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
