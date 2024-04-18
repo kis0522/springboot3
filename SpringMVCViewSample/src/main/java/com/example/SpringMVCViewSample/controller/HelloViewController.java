@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@RequestMapping(value = "hello", method = {RequestMethod.GET, RequestMethod.POST}) method를 사용해 주고 받을 수 있다.
 public class HelloViewController {
     @GetMapping("view")
+    //@GetMapping(value={"view","view3"})
     //@GetMapping(value={"hello","hellospring"}) 2개이상 배열형태로 넣을 수 있다.
     public String helloView(){
         return "hello";
@@ -23,3 +24,5 @@ public class HelloViewController {
         return "morning";
     }
 }
+//문제) http://localhost:8080/hello/view2를 입력하면 moring 출력
+//문제) http://localhost:8080/hello/view 또는 http://localhost:8080/hello/view3을 입력하면 Hello View!!! 출력
