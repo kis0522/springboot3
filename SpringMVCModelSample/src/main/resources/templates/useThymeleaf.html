@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>useThymeleaf</title>
+</head>
+<body>
+  <h1>Fragment를 아래에 삽입하기</h1>
+  <div id="one" th:insert="fragment :: one"></div>
+  <!--상위 객체가 사라짐-->
+  <div id="three" th:replace="fragment :: three"></div>
+</body>
+</html>
