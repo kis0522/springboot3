@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div class="eventWrap">
+    <div id="event" class="cf">
+      <div class="eventbox fl">
+        <select name="library" id="library" title="도서관 바로가기">
+          <option value="#" selected="selected">도서관 바로가기</option>
+          <option value="#">안양시립도서관</option>
+          <option value="#">석수도서관</option>
+          <option value="#">만안도서관</option>
+          <option value="#">삼덕도서관</option>
+          <option value="#">박달도서관</option>
+          <option value="#">평촌도서관(임시운영)</option>
+          <option value="#">관양도서관</option>
+          <option value="#">비산도서관</option>
+          <option value="#">호계도서관</option>
+          <option value="#">어린이도서관</option>
+          <option value="#">벌말도서관</option>
+          <option value="#">작은도서관</option>
+          <option value="#">독서마라톤</option>
+        </select>
+      </div>
+      <ul class="fl">
+        <li class="fl"><a href="sub01" tabindex="1">로그인</a></li>
+        <li class="fl"><a href="#" tabindex="2">회원가입</a></li>
+        <li class="fl"><a href="#" tabindex="3">사이트맵</a></li>
+        <li class="fl"><a href="#" tabindex="4"><img src="images/top_snsKakao.png" alt="카카오톡"/></a></li>
+        <li class="fl"><a href="#" tabindex="5"><img src="images/top_snsInsta.png" alt="인스타그램"/></a></li>
+        <li class="fl"><a href="#" tabindex="6"><img src="images/top_snsYoutube.png" alt="유튜브"/></a></li>
+      </ul>
+      <ul class="fl" id="zoom">
+        <li class="zoomIn">+10%</li>
+        <li class="zoomReturn">100%</li>
+        <li class="zoomOut">-10%</li>
+      </ul>
+    </div><!-- id="event" -->
+  </div>
+  <div class="menuWrap">
+    <div class="oneInner">
+      <ul class="oneDepth cf">
+        <li id="mainLogo" class="fl"><a href="main" tabindex="7"><img src="images/logo.png" alt="로고"/></a></li><!-- id="mainLogo" -->
+        <li><a href="sub01" tabindex="8">자료검색</a>
+          <div class="twoInner">
+            <div class="twoDepth cf">
+              <ul class="cf ml hm">
+                <li><a href="sub01" tabindex="9">소장자료검색</a></li>
+                <li><a href="sub01" tabindex="10">주제별검색</a></li>
+                <li><a href="sub01" tabindex="11">신착자료검색</a></li>
+                <li><a href="sub01" tabindex="12">정기간행물검색</a></li>
+                <li><a href="sub01" tabindex="13">비치희망도서신청</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub02" tabindex="15">사서추천도서</a></li>
+                <li><a href="sub02" tabindex="16">도서대출베스트</a></li>
+                <li><a href="sub02" tabindex="17">원문/학술정보</a></li>
+                <li><a href="sub02" tabindex="18">향토자료(경기도메모리)</a></li>
+                <li><a href="sub02" tabindex="19">도서관특성화</a></li>
+                <li><a href="sub02" tabindex="20">공공도서관인기도서</a></li>
+                <li><a href="sub02" tabindex="21">도서기증안내</a></li>
+              </ul>
+              <ul class="cf pr1 hm">
+                <li><a href="sub03" tabindex="23">독서마라톤</a></li>
+                <li><a href="sub03" tabindex="24">한도시한책읽기</a></li>
+                <li><a href="sub03" tabindex="25">문화행사신청</a></li>
+                <li><a href="sub03" tabindex="26">영화상영</a></li>
+                <li><a href="sub03" tabindex="27">스마트영어도서관</a></li>
+                <li><a href="sub03" tabindex="28">북스타트</a></li>
+                <li><a href="sub03" tabindex="29">견학신청</a></li>
+                <li><a href="sub03" tabindex="30">설문조사</a></li>
+              </ul>
+              <ul class="cf pr2 hm">
+                <li><a href="sub01" tabindex="32">도서관소식</a></li>
+                <li><a href="sub01" tabindex="33">자주하는질문</a></li>
+                <li><a href="sub01" tabindex="34">도서관이용안내</a></li>
+                <li><a href="sub01" tabindex="35">상호대차</a></li>
+                <li><a href="sub01" tabindex="36">모바일앱</a></li>
+                <li><a href="sub01" tabindex="37">스마트도서관</a></li>
+                <li><a href="sub01" tabindex="38">책배달서비스</a></li>
+                <li><a href="sub01" tabindex="39">전지도서관</a></li>
+                <li><a href="sub01" tabindex="40">도서관에바란다</a></li>
+                <li><a href="sub01" tabindex="41">분실물센터</a></li>
+              </ul>
+              <ul class="cf pr3 hm">
+                <li><a href="sub02" tabindex="43">일반현황</a></li>
+                <li><a href="sub02" tabindex="44">조직/직원정보</a></li>
+                <li><a href="sub02" tabindex="45">도서관관련법규</a></li>
+                <li><a href="sub02" tabindex="46">찾아오시는길</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub03" tabindex="48">나의정보</a></li>
+                <li><a href="sub03" tabindex="49">도서이용내역</a></li>
+                <li><a href="sub03" tabindex="50">상호대차조회</a></li>
+                <li><a href="sub03" tabindex="51">관심도서목록</a></li>
+                <li><a href="sub03" tabindex="52">추천도서목록</a></li>
+                <li><a href="sub03" tabindex="53">희망도서신청조회</a></li>
+                <li><a href="sub03" tabindex="54">문화행사신청조회</a></li>
+                <li><a href="sub03" tabindex="55">견학신청조회</a></li>
+                <li><a href="sub03" tabindex="56">나의게시글조회</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="sub02" tabindex="14">독서정보</a>
+          <div class="twoInner">
+            <div class="twoDepth cf">
+              <ul class="cf ml hm">
+                <li><a href="sub01" tabindex="9">소장자료검색</a></li>
+                <li><a href="sub01" tabindex="10">주제별검색</a></li>
+                <li><a href="sub01" tabindex="11">신착자료검색</a></li>
+                <li><a href="sub01" tabindex="12">정기간행물검색</a></li>
+                <li><a href="sub01" tabindex="13">비치희망도서신청</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub02" tabindex="15">사서추천도서</a></li>
+                <li><a href="sub02" tabindex="16">도서대출베스트</a></li>
+                <li><a href="sub02" tabindex="17">원문/학술정보</a></li>
+                <li><a href="sub02" tabindex="18">향토자료(경기도메모리)</a></li>
+                <li><a href="sub02" tabindex="19">도서관특성화</a></li>
+                <li><a href="sub02" tabindex="20">공공도서관인기도서</a></li>
+                <li><a href="sub02" tabindex="21">도서기증안내</a></li>
+              </ul>
+              <ul class="cf pr1 hm">
+                <li><a href="sub03" tabindex="23">독서마라톤</a></li>
+                <li><a href="sub03" tabindex="24">한도시한책읽기</a></li>
+                <li><a href="sub03" tabindex="25">문화행사신청</a></li>
+                <li><a href="sub03" tabindex="26">영화상영</a></li>
+                <li><a href="sub03" tabindex="27">스마트영어도서관</a></li>
+                <li><a href="sub03" tabindex="28">북스타트</a></li>
+                <li><a href="sub03" tabindex="29">견학신청</a></li>
+                <li><a href="sub03" tabindex="30">설문조사</a></li>
+              </ul>
+              <ul class="cf pr2 hm">
+                <li><a href="sub01" tabindex="32">도서관소식</a></li>
+                <li><a href="sub01" tabindex="33">자주하는질문</a></li>
+                <li><a href="sub01" tabindex="34">도서관이용안내</a></li>
+                <li><a href="sub01" tabindex="35">상호대차</a></li>
+                <li><a href="sub01" tabindex="36">모바일앱</a></li>
+                <li><a href="sub01" tabindex="37">스마트도서관</a></li>
+                <li><a href="sub01" tabindex="38">책배달서비스</a></li>
+                <li><a href="sub01" tabindex="39">전지도서관</a></li>
+                <li><a href="sub01" tabindex="40">도서관에바란다</a></li>
+                <li><a href="sub01" tabindex="41">분실물센터</a></li>
+              </ul>
+              <ul class="cf pr3 hm">
+                <li><a href="sub02" tabindex="43">일반현황</a></li>
+                <li><a href="sub02" tabindex="44">조직/직원정보</a></li>
+                <li><a href="sub02" tabindex="45">도서관관련법규</a></li>
+                <li><a href="sub02" tabindex="46">찾아오시는길</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub03" tabindex="48">나의정보</a></li>
+                <li><a href="sub03" tabindex="49">도서이용내역</a></li>
+                <li><a href="sub03" tabindex="50">상호대차조회</a></li>
+                <li><a href="sub03" tabindex="51">관심도서목록</a></li>
+                <li><a href="sub03" tabindex="52">추천도서목록</a></li>
+                <li><a href="sub03" tabindex="53">희망도서신청조회</a></li>
+                <li><a href="sub03" tabindex="54">문화행사신청조회</a></li>
+                <li><a href="sub03" tabindex="55">견학신청조회</a></li>
+                <li><a href="sub03" tabindex="56">나의게시글조회</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="sub03" tabindex="22">문화행사/참여</a>
+          <div class="twoInner">
+            <div class="twoDepth cf">
+              <ul class="cf ml hm">
+                <li><a href="sub01" tabindex="9">소장자료검색</a></li>
+                <li><a href="sub01" tabindex="10">주제별검색</a></li>
+                <li><a href="sub01" tabindex="11">신착자료검색</a></li>
+                <li><a href="sub01" tabindex="12">정기간행물검색</a></li>
+                <li><a href="sub01" tabindex="13">비치희망도서신청</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub02" tabindex="15">사서추천도서</a></li>
+                <li><a href="sub02" tabindex="16">도서대출베스트</a></li>
+                <li><a href="sub02" tabindex="17">원문/학술정보</a></li>
+                <li><a href="sub02" tabindex="18">향토자료(경기도메모리)</a></li>
+                <li><a href="sub02" tabindex="19">도서관특성화</a></li>
+                <li><a href="sub02" tabindex="20">공공도서관인기도서</a></li>
+                <li><a href="sub02" tabindex="21">도서기증안내</a></li>
+              </ul>
+              <ul class="cf pr1 hm">
+                <li><a href="sub03" tabindex="23">독서마라톤</a></li>
+                <li><a href="sub03" tabindex="24">한도시한책읽기</a></li>
+                <li><a href="sub03" tabindex="25">문화행사신청</a></li>
+                <li><a href="sub03" tabindex="26">영화상영</a></li>
+                <li><a href="sub03" tabindex="27">스마트영어도서관</a></li>
+                <li><a href="sub03" tabindex="28">북스타트</a></li>
+                <li><a href="sub03" tabindex="29">견학신청</a></li>
+                <li><a href="sub03" tabindex="30">설문조사</a></li>
+              </ul>
+              <ul class="cf pr2 hm">
+                <li><a href="sub01" tabindex="32">도서관소식</a></li>
+                <li><a href="sub01" tabindex="33">자주하는질문</a></li>
+                <li><a href="sub01" tabindex="34">도서관이용안내</a></li>
+                <li><a href="sub01" tabindex="35">상호대차</a></li>
+                <li><a href="sub01" tabindex="36">모바일앱</a></li>
+                <li><a href="sub01" tabindex="37">스마트도서관</a></li>
+                <li><a href="sub01" tabindex="38">책배달서비스</a></li>
+                <li><a href="sub01" tabindex="39">전지도서관</a></li>
+                <li><a href="sub01" tabindex="40">도서관에바란다</a></li>
+                <li><a href="sub01" tabindex="41">분실물센터</a></li>
+              </ul>
+              <ul class="cf pr3 hm">
+                <li><a href="sub02" tabindex="43">일반현황</a></li>
+                <li><a href="sub02" tabindex="44">조직/직원정보</a></li>
+                <li><a href="sub02" tabindex="45">도서관관련법규</a></li>
+                <li><a href="sub02" tabindex="46">찾아오시는길</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub03" tabindex="48">나의정보</a></li>
+                <li><a href="sub03" tabindex="49">도서이용내역</a></li>
+                <li><a href="sub03" tabindex="50">상호대차조회</a></li>
+                <li><a href="sub03" tabindex="51">관심도서목록</a></li>
+                <li><a href="sub03" tabindex="52">추천도서목록</a></li>
+                <li><a href="sub03" tabindex="53">희망도서신청조회</a></li>
+                <li><a href="sub03" tabindex="54">문화행사신청조회</a></li>
+                <li><a href="sub03" tabindex="55">견학신청조회</a></li>
+                <li><a href="sub03" tabindex="56">나의게시글조회</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="sub01" tabindex="31">이용안내</a>
+          <div class="twoInner">
+            <div class="twoDepth cf">
+              <ul class="cf ml hm">
+                <li><a href="sub01" tabindex="9">소장자료검색</a></li>
+                <li><a href="sub01" tabindex="10">주제별검색</a></li>
+                <li><a href="sub01" tabindex="11">신착자료검색</a></li>
+                <li><a href="sub01" tabindex="12">정기간행물검색</a></li>
+                <li><a href="sub01" tabindex="13">비치희망도서신청</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub02" tabindex="15">사서추천도서</a></li>
+                <li><a href="sub02" tabindex="16">도서대출베스트</a></li>
+                <li><a href="sub02" tabindex="17">원문/학술정보</a></li>
+                <li><a href="sub02" tabindex="18">향토자료(경기도메모리)</a></li>
+                <li><a href="sub02" tabindex="19">도서관특성화</a></li>
+                <li><a href="sub02" tabindex="20">공공도서관인기도서</a></li>
+                <li><a href="sub02" tabindex="21">도서기증안내</a></li>
+              </ul>
+              <ul class="cf pr1 hm">
+                <li><a href="sub03" tabindex="23">독서마라톤</a></li>
+                <li><a href="sub03" tabindex="24">한도시한책읽기</a></li>
+                <li><a href="sub03" tabindex="25">문화행사신청</a></li>
+                <li><a href="sub03" tabindex="26">영화상영</a></li>
+                <li><a href="sub03" tabindex="27">스마트영어도서관</a></li>
+                <li><a href="sub03" tabindex="28">북스타트</a></li>
+                <li><a href="sub03" tabindex="29">견학신청</a></li>
+                <li><a href="sub03" tabindex="30">설문조사</a></li>
+              </ul>
+              <ul class="cf pr2 hm">
+                <li><a href="sub01" tabindex="32">도서관소식</a></li>
+                <li><a href="sub01" tabindex="33">자주하는질문</a></li>
+                <li><a href="sub01" tabindex="34">도서관이용안내</a></li>
+                <li><a href="sub01" tabindex="35">상호대차</a></li>
+                <li><a href="sub01" tabindex="36">모바일앱</a></li>
+                <li><a href="sub01" tabindex="37">스마트도서관</a></li>
+                <li><a href="sub01" tabindex="38">책배달서비스</a></li>
+                <li><a href="sub01" tabindex="39">전지도서관</a></li>
+                <li><a href="sub01" tabindex="40">도서관에바란다</a></li>
+                <li><a href="sub01" tabindex="41">분실물센터</a></li>
+              </ul>
+              <ul class="cf pr3 hm">
+                <li><a href="sub02" tabindex="43">일반현황</a></li>
+                <li><a href="sub02" tabindex="44">조직/직원정보</a></li>
+                <li><a href="sub02" tabindex="45">도서관관련법규</a></li>
+                <li><a href="sub02" tabindex="46">찾아오시는길</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub03" tabindex="48">나의정보</a></li>
+                <li><a href="sub03" tabindex="49">도서이용내역</a></li>
+                <li><a href="sub03" tabindex="50">상호대차조회</a></li>
+                <li><a href="sub03" tabindex="51">관심도서목록</a></li>
+                <li><a href="sub03" tabindex="52">추천도서목록</a></li>
+                <li><a href="sub03" tabindex="53">희망도서신청조회</a></li>
+                <li><a href="sub03" tabindex="54">문화행사신청조회</a></li>
+                <li><a href="sub03" tabindex="55">견학신청조회</a></li>
+                <li><a href="sub03" tabindex="56">나의게시글조회</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="sub02" tabindex="42">도서관소개</a>
+          <div class="twoInner">
+            <div class="twoDepth cf">
+              <ul class="cf ml hm">
+                <li><a href="sub01" tabindex="9">소장자료검색</a></li>
+                <li><a href="sub01" tabindex="10">주제별검색</a></li>
+                <li><a href="sub01" tabindex="11">신착자료검색</a></li>
+                <li><a href="sub01" tabindex="12">정기간행물검색</a></li>
+                <li><a href="sub01" tabindex="13">비치희망도서신청</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub02" tabindex="15">사서추천도서</a></li>
+                <li><a href="sub02" tabindex="16">도서대출베스트</a></li>
+                <li><a href="sub02" tabindex="17">원문/학술정보</a></li>
+                <li><a href="sub02" tabindex="18">향토자료(경기도메모리)</a></li>
+                <li><a href="sub02" tabindex="19">도서관특성화</a></li>
+                <li><a href="sub02" tabindex="20">공공도서관인기도서</a></li>
+                <li><a href="sub02" tabindex="21">도서기증안내</a></li>
+              </ul>
+              <ul class="cf pr1 hm">
+                <li><a href="sub03" tabindex="23">독서마라톤</a></li>
+                <li><a href="sub03" tabindex="24">한도시한책읽기</a></li>
+                <li><a href="sub03" tabindex="25">문화행사신청</a></li>
+                <li><a href="sub03" tabindex="26">영화상영</a></li>
+                <li><a href="sub03" tabindex="27">스마트영어도서관</a></li>
+                <li><a href="sub03" tabindex="28">북스타트</a></li>
+                <li><a href="sub03" tabindex="29">견학신청</a></li>
+                <li><a href="sub03" tabindex="30">설문조사</a></li>
+              </ul>
+              <ul class="cf pr2 hm">
+                <li><a href="sub01" tabindex="32">도서관소식</a></li>
+                <li><a href="sub01" tabindex="33">자주하는질문</a></li>
+                <li><a href="sub01" tabindex="34">도서관이용안내</a></li>
+                <li><a href="sub01" tabindex="35">상호대차</a></li>
+                <li><a href="sub01" tabindex="36">모바일앱</a></li>
+                <li><a href="sub01" tabindex="37">스마트도서관</a></li>
+                <li><a href="sub01" tabindex="38">책배달서비스</a></li>
+                <li><a href="sub01" tabindex="39">전지도서관</a></li>
+                <li><a href="sub01" tabindex="40">도서관에바란다</a></li>
+                <li><a href="sub01" tabindex="41">분실물센터</a></li>
+              </ul>
+              <ul class="cf pr3 hm">
+                <li><a href="sub02" tabindex="43">일반현황</a></li>
+                <li><a href="sub02" tabindex="44">조직/직원정보</a></li>
+                <li><a href="sub02" tabindex="45">도서관관련법규</a></li>
+                <li><a href="sub02" tabindex="46">찾아오시는길</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub03" tabindex="48">나의정보</a></li>
+                <li><a href="sub03" tabindex="49">도서이용내역</a></li>
+                <li><a href="sub03" tabindex="50">상호대차조회</a></li>
+                <li><a href="sub03" tabindex="51">관심도서목록</a></li>
+                <li><a href="sub03" tabindex="52">추천도서목록</a></li>
+                <li><a href="sub03" tabindex="53">희망도서신청조회</a></li>
+                <li><a href="sub03" tabindex="54">문화행사신청조회</a></li>
+                <li><a href="sub03" tabindex="55">견학신청조회</a></li>
+                <li><a href="sub03" tabindex="56">나의게시글조회</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="sub03" tabindex="47">마이페이지</a>
+          <div class="twoInner">
+            <div class="twoDepth cf">
+              <ul class="cf ml hm">
+                <li><a href="sub01" tabindex="9">소장자료검색</a></li>
+                <li><a href="sub01" tabindex="10">주제별검색</a></li>
+                <li><a href="sub01" tabindex="11">신착자료검색</a></li>
+                <li><a href="sub01" tabindex="12">정기간행물검색</a></li>
+                <li><a href="sub01" tabindex="13">비치희망도서신청</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub02" tabindex="15">사서추천도서</a></li>
+                <li><a href="sub02" tabindex="16">도서대출베스트</a></li>
+                <li><a href="sub02" tabindex="17">원문/학술정보</a></li>
+                <li><a href="sub02" tabindex="18">향토자료(경기도메모리)</a></li>
+                <li><a href="sub02" tabindex="19">도서관특성화</a></li>
+                <li><a href="sub02" tabindex="20">공공도서관인기도서</a></li>
+                <li><a href="sub02" tabindex="21">도서기증안내</a></li>
+              </ul>
+              <ul class="cf pr1 hm">
+                <li><a href="sub03" tabindex="23">독서마라톤</a></li>
+                <li><a href="sub03" tabindex="24">한도시한책읽기</a></li>
+                <li><a href="sub03" tabindex="25">문화행사신청</a></li>
+                <li><a href="sub03" tabindex="26">영화상영</a></li>
+                <li><a href="sub03" tabindex="27">스마트영어도서관</a></li>
+                <li><a href="sub03" tabindex="28">북스타트</a></li>
+                <li><a href="sub03" tabindex="29">견학신청</a></li>
+                <li><a href="sub03" tabindex="30">설문조사</a></li>
+              </ul>
+              <ul class="cf pr2 hm">
+                <li><a href="sub01" tabindex="32">도서관소식</a></li>
+                <li><a href="sub01" tabindex="33">자주하는질문</a></li>
+                <li><a href="sub01" tabindex="34">도서관이용안내</a></li>
+                <li><a href="sub01" tabindex="35">상호대차</a></li>
+                <li><a href="sub01" tabindex="36">모바일앱</a></li>
+                <li><a href="sub01" tabindex="37">스마트도서관</a></li>
+                <li><a href="sub01" tabindex="38">책배달서비스</a></li>
+                <li><a href="sub01" tabindex="39">전지도서관</a></li>
+                <li><a href="sub01" tabindex="40">도서관에바란다</a></li>
+                <li><a href="sub01" tabindex="41">분실물센터</a></li>
+              </ul>
+              <ul class="cf pr3 hm">
+                <li><a href="sub02" tabindex="43">일반현황</a></li>
+                <li><a href="sub02" tabindex="44">조직/직원정보</a></li>
+                <li><a href="sub02" tabindex="45">도서관관련법규</a></li>
+                <li><a href="sub02" tabindex="46">찾아오시는길</a></li>
+              </ul>
+              <ul class="cf hm">
+                <li><a href="sub03" tabindex="48">나의정보</a></li>
+                <li><a href="sub03" tabindex="49">도서이용내역</a></li>
+                <li><a href="sub03" tabindex="50">상호대차조회</a></li>
+                <li><a href="sub03" tabindex="51">관심도서목록</a></li>
+                <li><a href="sub03" tabindex="52">추천도서목록</a></li>
+                <li><a href="sub03" tabindex="53">희망도서신청조회</a></li>
+                <li><a href="sub03" tabindex="54">문화행사신청조회</a></li>
+                <li><a href="sub03" tabindex="55">견학신청조회</a></li>
+                <li><a href="sub03" tabindex="56">나의게시글조회</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li id="btnSearch"><a href="#" tabindex="57"><img src="images/btn_search.png" width="26" height="26" alt="검색"/></a></li><!-- id="btnsearch" -->
+      </ul>
+    </div>
+  </div>
+  <!--대체 위치-->
+  <div layout:fragment="content">
+    여기를 대체함
+  </div>
+  <!--공통 바닥글-->
+  <footer>
+    <hr/>
+    <div align="center">
+      <div class="footerWrap1">
+        <div id="topfooter">
+          <a href="#" tabindex="68">개인정보처리방침</a>
+          <a href="#" tabindex="69">이메일추출방지정책</a>
+          <a href="#" tabindex="70">도시관련법규</a>
+          <div class="box">
+            <select name="relateSite" id="relateSite" title="관련기관 사이트 바로가기 선택">
+              <option value="#" selected="selected">관련기관 사이트</option>
+              <option value="#">국립중앙도서관</option>
+              <option value="#">국가전자도서관</option>
+              <option value="#">국립어린이청소년도서관</option>
+              <option value="#">국립중앙장애인도서관</option>
+              <option value="#">국회도서관</option>
+              <option value="#">경기도사이버도서관</option>
+              <option value="#">경기도메모리</option>
+              <option value="#">책바다</option>
+              <option value="#">책나래</option>
+              <option value="#">책이음</option>
+              <option value="#">사서에게물어보세요</option>
+              <option value="#">안녕, 안양</option>
+              <option value="#">안양시청</option>
+              <option value="#">안양시평생학습원</option>
+              <option value="#">얀양시청소년재단</option>
+              <option value="#">안양산업진흥원</option>
+              <option value="#">FC안양</option>
+              <option value="#">안양도시공사</option>
+              <option value="#">안양문화예술재단</option>
+            </select>
+            <a href="#go" tabindex="71" id="btnRelateSite" class="btnGo" title="새창열림">이동</a>
+          </div>
+        </div><!-- id="topfooter" -->
+      </div>
+      <div class="footerWrap2">
+        <div id="bottomfooter">
+          <strong>삼덕도서관</strong> 14003 경기도 안양시 만안구 병목안로 58(안양동) 전화번호 : 031-8045-6350 <br/>
+          Copyright 2020. Anyang Municipal Library All Rights Reserved.
+        </div><!-- id="bottomfooter" -->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>팝업</title>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		.fl{float: left;}
+		ul,li{list-style: none;}
+		.box{background: url(images/write1.jpg) no-repeat; width: 450px; height: 450px; background-size: 450px; position: relative;}
+		.box>h5{width: 250px; height: 30px; display:block; font-size: 18px; position: absolute; top: 35px; left: 40px; background: #f17d3c; color: #f7ebdb; line-height: 20px; border-radius: 50px; line-height: 30px;}
+		form{position: absolute; right: 5px; bottom: 5px;}
+		.eventbox{position: absolute; background: #fefce5; width: 190px; height: 120px; top: 80px; left: 40px; font-size: 16px; text-align: left;}
+		.countbox{position: absolute; top: 380px; left: 20px; width: 410px; height: 40px; background: #ffffff; font-size: 17px; text-align: left; line-height: 40px; padding: 0 5px; box-sizing: border-box; float:left;}
+		.countbox img{margin-top: 8px;}
+		#countD{margin-left: 5px;}
+		.hour{margin: 0 2px;}
+		.btn{background: #ffffff; border: 1px solid #000000; font-size: 14px; padding: 0 3px; cursor: pointer;}
+	</style>
+	<script type="text/javascript">
+		function setCookie( name, value, expiredays ){ 
+			var todayDate = new Date(); 
+			todayDate.setDate(todayDate.getDate() + expiredays); 
+			document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toUTCString() + ";" 
+		} 
+		
+		function closeWin(){ 
+			if ( document.forms[0].Notice.checked ) 
+			setCookie( "Notice", "done" , 1); 
+			self.close(); 
+		}
+		
+		function unit(x){	//1의 자리 숫자
+			var m = x%10
+			return m
+		}
+		function tenth(y){	//10의 자리 숫자
+			var m = y/10%10
+			m = Math.floor(m)
+			return m
+		}
+		function hund(z){	//100의 자리 숫자
+			var m = z/100
+			m = Math.floor(m)
+			return m
+		}
+
+		// 카운트 함수 정의 
+		function ddaycount(){
+			imgArr = [
+				'images/num0.gif',
+				'images/num1.gif',
+				'images/num2.gif',
+				'images/num3.gif',
+				'images/num4.gif',
+				'images/num5.gif',
+				'images/num6.gif',
+				'images/num7.gif',
+				'images/num8.gif',
+				'images/num9.gif'
+			]
+			
+			doomsday = new Date('May 22, 2024 18:00:00')
+			// Janu Febr Marc Apri May July Augu Sept Octo Nove Dece
+			today = new Date()
+			howfar = doomsday - today
+			
+			if(howfar > 0){ setTimeout('ddaycount()',1000) }
+			else{
+				clearTimeout('ddaycount()')
+				document.getElementById('countment').innerHTML='카운트가 종료되었습니다.'
+				return false
+			}
+			
+			days = Math.floor(howfar/(1000*60*60*24))
+			hours = Math.floor(howfar/(1000*60*60))
+			mins = Math.floor(howfar/(1000*60))
+			secs = Math.floor(howfar/(1000))
+			
+			d = days
+			h = hours-days*24
+			m = mins-hours*60
+			s = secs-mins*60
+			
+			document.getElementById('day100').setAttribute('src',imgArr[hund(d)])
+			document.getElementById('day10').setAttribute('src',imgArr[tenth(d)])
+			document.getElementById('day1').setAttribute('src',imgArr[unit(d)])
+			document.getElementById('hour10').setAttribute('src',imgArr[tenth(h)])
+			document.getElementById('hour1').setAttribute('src',imgArr[unit(h)])
+			document.getElementById('min10').setAttribute('src',imgArr[tenth(m)])
+			document.getElementById('min1').setAttribute('src',imgArr[unit(m)])
+			document.getElementById('sec10').setAttribute('src',imgArr[tenth(s)])
+			document.getElementById('sec1').setAttribute('src',imgArr[unit(s)])
+			
+			if(d<10){d='00'+d}else if(d<100){d='0'+d}
+			if(h<10){h="0"+h}
+			if(m<10){m="0"+m}
+			if(s<10){s="0"+s}
+		}
+	</script>
+</head>
+<body onLoad="ddaycount()">
+	<center>
+		<div class="box">
+			<h5>삼덕 도서관 글 쓰기 이벤트</h5>
+			<div class="eventbox">
+				1등:10만원 해피머니 지급 <br/>
+				2등:5만원 해피머니 지급 <br/>
+				3등:3만원 해피머니 지급 
+			</div>
+			<div class="countbox" id="countment">
+				<span class="fl">이벤트 종료까지</span>
+				<ul class="fl">
+					<li id="countD" class="firstli fl">
+						<img src="images/num0.gif" width="20" id="day100" class="fl" />
+						<img src="images/num0.gif" width="20" id="day10" class="fl" />
+						<img src="images/num0.gif" width="20" id="day1" class="fl" />
+					</li>
+					<li class="fl hour">
+						일
+					</li>
+					<li id="counterH" class="fl">
+						<img src="images/num0.gif" width="20" id="hour10" class="fl" alt="시간10의자리" />
+						<img src="images/num0.gif" width="20" id="hour1" class="fl" alt="시간1의자리" />
+					</li>
+					<li class="fl hour">
+						시
+					</li>
+					<li id="counterM" class="fl">
+						<img src="images/num0.gif" width="20" id="min10" class="fl" alt="분10의자리" />
+						<img src="images/num0.gif" width="20" id="min1" class="fl" alt="분1의자리" />
+					</li>
+					<li class="fl hour">
+						분
+					</li>
+					<li id="counterS" class="fl">
+						<img src="images/num0.gif" width="20" id="sec10" class="fl" alt="분10의자리" />
+						<img src="images/num0.gif" width="20" id="sec1" class="fl" alt="분1의자리" />
+					</li>
+					<li class="fl hour">
+						초
+					</li>
+				</ul>
+			</div>
+			<form>
+				하루 동안 보지 않기
+				<input type="checkbox" name="Notice" value=""/>
+				<input type="button" value="닫기" onClick="closeWin()" class="btn"/>
+			</form>
+		</div>
+	</center>
+</body>
+</html>

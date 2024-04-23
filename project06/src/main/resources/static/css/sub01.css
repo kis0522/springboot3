@@ -1,0 +1,41 @@
+﻿*{margin: 0; padding: 0;}
+ul, ol, dl, li{list-style: none;}
+a{text-decoration: none;}
+.fl{float: left;}
+.fr{float: right;}
+.cf:after{content: ''; display: block; clear: both;}
+body{overflow-y: scroll;}
+
+/* header */
+header{width: 450px; height: 100px; margin: 0 auto; text-align: center; margin-top: 150px; box-sizing: border-box; padding: 23px;}
+
+/* section */
+section{width: 450px; height: 350px; margin: 0 auto; text-align: center; box-sizing: border-box; border-radius: 9px; border-top: 1px solid #000000; }
+section>a{color: #555555; border-right: 1px solid #000000; padding: 0 20px;}
+section>a:last-child{border: 0;}
+
+/* 탭박스 */
+.tabLogin{width: 450px; height: 50px; background: #f8f9fa; float: left;}
+.tabLoginBox{width: 150px; height: 50px; border-right: 1px solid #000000; display: block; float: left; border-radius: 8px 8px 0 0; box-sizing: border-box; line-height: 50px; color: #555555;}
+.tabLoginBox:first-child{border-left: 1px solid #000000;}
+.tabLoginBox.active{background: #ffffff; height: 51px; z-index: 2; position: relative;}
+
+.login{display: block; width: 450px; height: 230px; float: left; border: 1px solid #000000; box-sizing: border-box; padding: 20px 30px; margin-bottom: 25px;}
+
+#mainLogin{text-align: left; line-height: 40px;}
+#mainLogin>input.guideText{width: 390px; height: 50px; font-size: 18px; box-sizing: border-box; padding: 10px; color: #333333;}
+#mainLogin>button{width: 390px; height: 50px; box-sizing: border-box; background: #00d96c; color: #ffffff; font-weight: bold; font-size: 20px;}
+
+#subLogin{text-align: left;}
+#subLogin>input{width: 390px; height: 50px; font-size: 18px; box-sizing: border-box; padding: 10px; color: #333333; margin: 20px 0 7px 0;}
+#subLogin>button{width: 390px; height: 50px; box-sizing: border-box; background: #00d96c; color: #ffffff; font-weight: bold; font-size: 20px;}
+
+#qrLogin{text-align: left; line-height: 150%;}
+#qrLogin>img{float: left; margin-right: 10px;}
+#qrLogin>.time{margin-top: 35px; width: 390px; height: 50px; font-size: 20px; line-height: 50px; border: 1px solid #000000; box-sizing: border-box; padding: 0 5px; text-align: center; background: #bfff00;}
+
+/* footer */
+footer{width: 450px; height: 100px; margin: 0 auto; font-size: 12px; text-align: center; margin-top: 200px;}
+footer .bold{font-weight: bold;}
+footer>a{color: #555555; border-right: 1px solid #000000; padding: 0 5px;}
+footer>a:nth-child(3){border: 0;}

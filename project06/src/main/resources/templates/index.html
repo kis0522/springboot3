@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{commons/mainlayout}">
+<head>
+	<meta charset="UTF-8">
+	<title>삼덕도서관</title>
+	<link rel="stylesheet" href="css/common.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.easing.1.3.min.js"></script>
+	<script src="js/size.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript">
+	function setCookie( name, value, expiredays ){ 
+		var todayDate = new Date(); 
+		todayDate.setDate(todayDate.getDate() + expiredays); 
+		document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toUTCString() + ";" 
+	} 
+	
+	function getCookie( name ) 
+	{ 
+	  var nameOfCookie = name + "="; 
+	  var x = 0; 
+	  while ( x <= document.cookie.length ){ 
+		var y = (x+nameOfCookie.length); 
+		if ( document.cookie.substring( x, y ) == nameOfCookie ) { 
+		  if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) 
+			endOfCookie = document.cookie.length; 
+		  return unescape( document.cookie.substring( y, endOfCookie ) ); 
+		} 
+		x = document.cookie.indexOf( " ", x ) + 1; 
+		if ( x == 0 ) 
+		  break; 
+	  } 
+	  return ""; 
+	} // function getCookie
+	  
+	if ( getCookie( "Notice" ) != "done" ) 
+	{ 
+		noticeWindow  = window.open('popup','notice','width=450,height=450,top=100,left=80');
+		noticeWindow.opener = self; 
+	} 
+	</script>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="popup">
+			<div class="popupTop fl"><span class="onedayClose">하루 동안 열지 않기</span><span class="close">X</span></div>
+			<div class="popcent1">삼덕 도서관 대출 이벤트</div>
+			<div class="popcent2">2024.3.7 ~ 2024.5.22</div>
+			<div class="popcent3">5.31 홈페이지 게시</div>
+		</div>
+		<div class="centerWrap1">
+			<div id="mainCenter">
+				<div id="mainName">
+					<h1>삼덕도서관</h1>
+					<h2>청소년 분야 특성화 도서관</h2>
+					<div id="ranking">1 흔한남매</div><!-- id="ranking" -->
+				</div><!-- id="mainName" -->
+				<div id="serch">
+					<fieldset>
+						<label><input name="serch" type="radio" value="collectionMaterials" checked />소장자료</label>
+						<label><input name="serch" type="radio" value="homePage" />홈페이지</label>
+					</fieldset>
+					<input type="text" value="검색어를 입력하세요" class="guideText"/>
+					<a href="#" tabindex="58" class="serchBox fl">검색</a>
+					<a href="#" tabindex="59" class="serchBox fr gray">고급검색</a>
+				</div><!-- id="serch" -->
+				<div id="bigContentBox" class="fl">
+					<div class="start">
+						<span class="left"><a href="#" onclick="return false"><img src="images/left.png" alt="이전"/></a></span>
+						<span class="stopStart"><a href="#" onclick="return false"><img src="images/stop.png" alt="멈추기 및 실행"/></a></span>
+						<span class="right"><a href="#" onclick="return false"><img src="images/right.png" alt="다음"/></a></span>
+					</div>
+					<div class="sildemenu">
+						<div id="hotIssue">
+							<img src="images/hotIssue8.jpg" class="sliderImage" alt="핫이슈8"/>
+							<img src="images/hotIssue7.png" class="sliderImage" alt="핫이슈7"/>
+							<img src="images/hotIssue1.jpg" class="sliderImage" alt="핫이슈1"/>
+							<img src="images/hotIssue2.jpg" class="sliderImage" alt="핫이슈2"/>
+							<img src="images/hotIssue3.jpg" class="sliderImage" alt="핫이슈3"/>
+							<img src="images/hotIssue4.png" class="sliderImage" alt="핫이슈4"/>
+							<img src="images/hotIssue5.jpg" class="sliderImage" alt="핫이슈5"/>
+							<img src="images/hotIssue6.jpg" class="sliderImage" alt="핫이슈6"/>
+						</div><!-- id="hotIssue" -->
+					</div>
+					<div id="mainIssue">
+						<div class="box">
+							<div class="box1">
+								<h2>도서관 소식</h2>
+								<div class="more"><a href="sub01/sub01.html" tabindex="60">+</a></div>
+							</div>
+							<div class="box2">
+								<div class="mainIssue"><img src="images/mainIssue.png" alt="메인이슈"/></div>
+								<h3>삼덕도서관 목요독서회 &lt;삼덕<br/>서로&gt; 신규회원 모집 <br/><span>2024.02.02</span></h3>
+							</div>
+							<div class="box3">
+								<ul>
+									<li><a href="#" tabindex="61">2024년 비산도서관 기간제근로자(청소) 채용 공고</a><span>2024.02.01</span></li>
+									<li><a href="#" tabindex="62">2024년 동안구도서관(관양, 비산, 호계, 어린이, 벌말) 정기독서문화교육 강사 모집 공고</a><span>2024.01.30</span></li>
+									<li><a href="#" tabindex="63">2024년 만안구도서관 (석수·만안·삼덕·박달) 정기 독서문화교육 강사 모집</a><span>2024.01.30</span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- id="mainIssue" -->
+					<div id="loginBox">
+						<h2>회원 로그인</h2>
+						로그인을 하시면 더욱 편리하게 <br/>
+						이용할 수 있습니다.
+						<div class="loginBox">로그인</div>
+						<div class="loginBox">회원가입</div>
+						<div class="searchID"><a href="#" tabindex="64"><img src="images/find.png" alt="검색"/> ID/PW 찾기</a></div>
+					</div><!-- id="loginBox" -->
+				</div><!-- id="bigContentBox" -->
+				<div id="smallContentBox" class="fl">
+					<a href="#" class="smallContentBox1 fl">문화행사신청</a>
+					<a href="#" class="smallContentBox2 fl">희망도서신청</a>
+					<a href="#" class="smallContentBox3 fl">스마트도서관</a>
+					<a href="#" class="smallContentBox4 fl">열람실좌석현황</a>
+					<a href="#" class="smallContentBox5 fl">디지털도서관예약</a>
+					<a href="#" class="smallContentBox6 fl">전자도서관</a>
+					<a href="#" class="smallContentBox7 fl">도서관안내</a>
+				</div>
+			</div><!-- id="Maincenter" -->
+		</div>
+		<div class="centerWrap2">
+			<div id="middleCenter">
+				<div id="libraryCulturalEvents">
+					<div id="culturalEventBenner">
+						<h2>도서관 문화 행사</h2>
+						<h2 class="off">페이지2</h2>
+						<h2 class="off">페이지3</h2>
+						<a href="#tab1" class="tabBox on fl"></a>
+						<a href="#tab2" class="tabBox fl"></a>
+						<a href="#tab3" class="tabBox fl mr"></a>
+					</div><!-- id="culturalEventBenner" -->
+					<div class="cont fl" id="tab1">
+						<div class="culturalEventBox">
+							<div class="box">
+								<h3>삼덕도서관</h3>
+								<div class="end">마감</div>
+							</div>
+							<div class="roundBox">
+								<div class="upbox">
+									<h4>목요독서회 삼덕서로 신규회원 모집</h4>
+								</div>
+								<div class="downbox">
+									<br/>
+									대상 : 성인 <br/>
+									접수 : 2024.02.16~02.29
+								</div>
+							</div>
+						</div>
+						<div class="culturalEventBox">
+							<div class="box">
+								<h3>삼덕도서관</h3>
+								<div class="end">종료</div>
+							</div>
+							<div class="roundBox">
+								<div class="upbox">
+									<h4>[겨울방학특강] 초등 독서논술 (예비초등3-4)</h4>
+								</div>
+								<div class="downbox">
+									<br/>
+									대상 : 어린이 <br/>
+									접수 : 2023.12.27~01.05
+								</div>
+							</div>
+						</div>
+						<div class="culturalEventBox mr">
+							<div class="box">
+								<h3>삼덕도서관</h3>
+								<div class="end">종료</div>
+							</div>
+							<div class="roundBox">
+								<div class="upbox">
+									<h4>[겨울방학특강] 영어 그림책 함께 읽기 (예비초등1-2)</h4>
+								</div>
+								<div class="downbox">
+									<br/>
+									대상 : 어린이 <br/>
+									접수 : 2023.12.27~01.11
+								</div>
+							</div>
+						</div>
+						<div class="culturalEventBox">
+							<div class="box">
+								<h3>삼덕도서관</h3>
+								<div class="end">종료</div>
+							</div>
+							<div class="roundBox">
+								<div class="upbox">
+									<h4>[송년의 달] &lt;눈 오는 날, 토끼를 만났어요&gt; 윤순정 작가와의 만남</h4>
+								</div>
+								<div class="downbox">
+									<br/>
+									대상 : 어린이 <br/>
+									접수 : 2023.11.24~12.08
+								</div>
+							</div>
+						</div>
+						<div class="culturalEventBox">
+							<div class="box">
+								<h3>삼덕도서관</h3>
+								<div class="end">종료</div>
+							</div>
+							<div class="roundBox">
+								<div class="upbox">
+									<h4>[송년의 달] &lt;다람이네 빵집&gt; 유재이 작가와의 만남</h4>
+								</div>
+								<div class="downbox">
+									<br/>
+									대상 : 유아 <br/>
+									접수 : 2023.11.17~11.29
+								</div>
+							</div>
+						</div>
+						<div class="culturalEventBox mr">
+							<div class="box">
+								<h3>삼덕도서관</h3>
+								<div class="end">종료</div>
+							</div>
+							<div class="roundBox">
+								<div class="upbox">
+									<h4>가족이 함께 만드는 보드게임 (11/12 일)</h4>
+								</div>
+								<div class="downbox">
+									<br/>
+									대상 : 어린이 <br/>
+									접수 : 2023.10.18~10.25
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cont alt fl" id="tab2">
+						페이지2
+					</div>
+					<div class="cont alt fl" id="tab3">
+						페이지3
+					</div>
+				</div><!-- id="libraryCulturalEvents" -->
+				<div id="calendarAndUsageGuide">
+					<div class="box">
+						<div id="calendarbanner">
+							<h2>도서관 달력</h2>
+							<div class="calendar">
+								<img src="images/arrow.png" alt="Left arrow"/>
+								&nbsp;2024.02&nbsp;
+								<img src="images/arrow.png" alt="right arrow" class="ra"/>
+								<div class="more"><a href="#" tabindex="65">+</a></div>
+							</div>
+						</div><!-- id="calendarbanner" -->
+						<div id="calendar" class="cf">
+							<div class="box">
+								<p class="middle1">
+									<span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+								</p>
+								<p class="middle2">
+									<span>01</span><span>02</span><span>03</span>
+								</p>
+								<p class="middle3">
+									<span class="red">04</span><span class="cd">05</span><span>06</span><span>07</span><span>08</span><span class="cd">09</span><span class="cd">10</span>
+								</p>
+								<p class="middle4">
+									<span class="cd">11</span><span class="cd">12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span>
+								</p>
+								<p class="middle5">
+									<span class="red">18</span><span class="cd">19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+								</p>
+								<p class="middle6">
+									<span class="red">25</span><span class="orr">26</span><span>27</span><span>28</span><span>29</span>
+								</p>
+								<div class="closedDays fl"></div><div class="fl">휴관일&nbsp;&nbsp;</div>
+								<div class="openReadingRoom fl"></div><div class="fl">열람실 개방 휴관일</div>
+							</div>
+						</div><!-- id="calendar" -->
+						<div class="cont1 fi">
+							<div id="usageGuide">
+								<div class="box1">
+									<h2 class="fl">이용안내</h2>
+									<div class="more"><a href="#" tabindex="66">+</a></div>
+								</div>
+								<div class="box2">
+									<ul>
+										<li><div class="fl">열람실</div><div class="fr">평일 08시~23시 / 주말 08시~23시</div></li>
+										<li><div class="fl">종합자료실</div><div class="fr">평일 09시~22시 / 주말 09시~17시</div></li>
+										<li><div class="fl">어린이실/기타자료실</div><div class="fr">평일 09~18시 / 주말 09~17시</div></li>
+									</ul>
+								</div>
+							</div><!-- id="usageGuide" -->
+						</div>
+						<div class="cont1 hidden">
+							<div id="weather">
+								<h2 class="fl">오늘의 날씨</h2>
+								<div class="cicon fr"></div>
+								<div class="cDate fl">날짜 : </div>
+								<div class="ctemp fl">현재 온도 : </div>
+								<div class="cfeelsLike fr">체감 온도 : </div>
+								<div class="cmintemp fl">최저 온도 : </div>
+								<div class="cmaxtemp fr">최고 온도 : </div>
+								<div class="chumidity fl">습도 : </div>
+							</div><!-- id="weather" -->
+						</div>
+					</div>
+				</div><!-- id="calendarAndUsageGuide" -->
+			</div><!-- id="middleCenter" -->
+		</div>
+		<div class="centerWrap3">
+			<div id="footerCenter">
+				<div class="sideBook active">불편한 편의점</div>
+				<div class="detail fl">
+					<img src="images/image08.jpg" alt="불편한 편의점"/>
+					<div class="introduction1">
+						<h3>불편한 편의점: 김호연 장편소설</h3>
+						저자 : 김호연 지음 <br/>
+						발행처 : 나무옆의자 <br/>
+						발행년도 : 2021 <br/>
+						ISBN : 9791161571188
+					</div>
+					<div class="introduction2">
+						<h3>책소개</h3>
+						&lt;망원동 브라더스&gt;의 작가 김호연의 '동네이야기' 시즌 2. 청파동 골목 모퉁이에 자리 잡은 작은 편의점을 무대로 힘겨운 시대를 살아가는 우리 이웃들의 삶의 속내와 희로애락을 따뜻하고 유머러스하게 담아냈다.
+					</div>
+				</div>
+				<div class="sideBook">불편한 편의점2</div>
+				<div class="detail fl">
+					<img src="images/image09.jpg" alt="불편한 편의점2"/>
+					<div class="introduction1">
+						<h3>불편한 편의점: 김호연 장편소설. 2</h3>
+						저자 : 김호연 지음 <br/>
+						발행처 : 나무옆의자 <br/>
+						발행년도 : 2022 <br/>
+						ISBN : 9791161571379
+					</div>
+					<div class="introduction2">
+						<h3>책소개</h3>
+						70만 독자를 사로잡은 재미와 감동『불편한 편의점』이 다시 열렸다!한층 진득해진 이야기와 궁금증 가득한 캐릭터고난의 시간을 통과하는 사람들이 다시 편의점에 모여든다!재방문을 환영합니다. 여기는 청파동 ALWAYS편의점입니다.독고가 떠나고 1년 반이 지난 여름, 청파동 ALWAYS편의점에 새 야간 알바가...
+					</div>
+				</div>
+				<div class="sideBook">아버지의 해방일지</div>
+				<div class="detail fl">
+					<img src="images/image10.jpg" alt="아버지의 해방일지"/>
+					<div class="introduction1">
+						<h3>아버지의 해방일지: 정지아 장편소설</h3>
+						저자 : 정지아 지음 <br/>
+						발행처 : 창비 <br/>
+						발행년도 : 2022 <br/>
+						ISBN : 9788936438838
+					</div>
+					<div class="introduction2">
+						<h3>책소개</h3>
+						김유정문학상 심훈문학대상 이효석문학상 등을 수상하며 문학성을 두루 입증받은 ‘리얼리스트’ 정지아가 무려 32년 만에 장편소설을 발표했다. 역사의 상흔과 가족의 사랑을 엮어낸 대작을 선보임으로써 선 굵은 서사에 목마른 독자들에게 한모금 청량음료 같은 해갈을 선사한다.
+					</div>
+				</div>
+				<div class="sideBook">흔한남매5</div>
+				<div class="detail fl">
+					<img src="images/image17.jpg" alt="흔한남매5"/>
+					<div class="introduction1">
+						<h3>흔한남매5</h3>
+						저자 : 흔한남매 원작; 백난도 글; 유난희 그림 <br/>
+						발행처 : 아이세움 <br/>
+						발행년도 : 2020 <br/>
+						ISBN : 9791164135592
+					</div>
+					<div class="introduction2">
+						<h3>책소개</h3>
+						'흔한남매' 유튜브 영상의 스토리를 앙증맞고 유머러스한 만화로 풀어 낸 코믹북이다. 하루도 조용할 날이 없는 으뜸이와 에이미의 일상 스토리는 진짜 웃음이 필요한 어린이들에게 순수한 웃음과 유쾌한 우애를 선사한다.
+					</div>
+				</div>
+				<div class="sideBook br">흔한남매8</div>
+				<div class="detail fl br">
+					<img src="images/image16.jpg" alt="흔한남매8"/>
+					<div class="introduction1">
+						<h3>흔한남매8</h3>
+						저자 : 흔한남매 원작; 백난도 글; 유난희 그림 <br/>
+						발행처 : 아이세움 <br/>
+						발행년도 : 2021 <br/>
+						ISBN : 9791164138197
+					</div>
+					<div class="introduction2">
+						<h3>책소개</h3>
+						‘흔한남매’ 유튜브 영상의 스토리를 앙증맞고 유머러스한 만화로 풀어 낸 코믹북이다. 하루도 조용할 날이 없는 으뜸이와 에이미의 일상 스토리는 진짜 웃음이 필요한 어린이들에게 순수한 웃음과 유쾌한 우애를 선사할 것이다.
+					</div>
+				</div>
+			</div><!-- id="footerCenter" -->
+		</div>
+	</div>
+</body>
+</html>

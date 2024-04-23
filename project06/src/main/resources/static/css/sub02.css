@@ -1,0 +1,90 @@
+﻿*{margin: 0; padding: 0;}
+ul, ol, dl, li{list-style: none;}
+a{text-decoration: none;}
+.fl{float: left;}
+.fr{float: right;}
+.cf:after{content: ''; display: block; clear: both;}
+body{overflow-y: scroll;}
+
+.eventWrap{background: #7160c4;}
+#event{width: 1420px; height: 46px; background: #7160c4; margin: 0 auto; color: #ffffff; line-height: 46px; text-align: center;}
+	#event a{position: relative; left: 0; float: left; color: #ffffff;}
+	#event>ul{margin-left: 667px;}
+	#event>.eventbox{width: 200px; height: 100%; background: #504487; text-align: left; line-height: 46px; padding: 5px; box-sizing:border-box;}
+	#event>.eventbox>select{background: #504487; width: 100%; height: 100%; border: 0; color: #ffffff; float: left; padding: 0 5px; box-sizing: border-box;}
+	#event ul a{padding-left: 20px;}
+	#event ul a img{position: relative; top: 10px;}
+	ul#zoom{margin:0;}
+	.zoomIn{width: 50px; height: 25px; background: #f8f8f8; float: left; margin: 11px 0 0 10px; color: #000000; line-height: 25px; cursor: pointer;}
+	.zoomReturn{width: 50px; height: 25px; background: #f8f8f8; float: left; margin: 11px 0 0 5px; color: #000000; line-height: 25px; cursor: pointer;}
+	.zoomOut{width: 50px; height: 25px; background: #f8f8f8; float: left; margin: 11px 0 0 5px; color: #000000; line-height: 25px; cursor: pointer;}
+
+.oneInner{background: #ffffff; height: 114px; position: relative; left: 0px; top: 0px; box-shadow: 0 4px 3px rgba(230,230,230,0.5);}	
+	.oneDepth{width: 1420px; background: #ffffff; height: 114px; margin: 0 auto; box-shadow: 0 4px 3px rgba(230,230,230,0.5);}
+	.oneDepth > li{float: left; height: 114px; padding-left: 30px;}
+	.oneDepth > li > a{display: block; float: left; padding: 0 30px; line-height: 114px; height: 114px; color: #333333; font-size: 20px;}
+	.oneDepth > li:hover .twoInner{display: block;}
+	
+.twoInner{width: 100%; background: white; position: absolute; top: 114px; left: 0; display: none; float: left; z-index:2; border-top: 1px solid #939393; border-bottom: 1px solid #939393;}
+	.twoDepth{width: 1300px; background: #ffffff; margin: 0 auto;  line-height: 40px; height: 400px;}
+	.twoDepth > ul{float: left; padding-right:40px; padding-left:10px; border-right: 1px solid #939393; font-size: 0.85em; text-align: left;}
+	.twoDepth>.hm{height: 100%;}
+	.twoDepth>.ml{margin-left: 160px; border-left: 1px solid #939393;}
+	.twoDepth>.pr1{padding-right: 90px;}
+	.twoDepth>.pr2{padding-right: 60px;}
+	.twoDepth>.pr3{padding-right: 80px;}
+	.twoDepth ul li a{color: #cac8ca;}
+	#mainLogo{float: left; position: relative; top: 15px; padding-left: 0;}
+	#mainLogo a{padding: 0;}
+	#btnSearch{float: right;}
+	#btnSearch a{display : block; padding: 0;}
+
+.contwrap1{width: 100%; height: 150px; background: #f8f8f8;}
+.cont{width: 1420px; margin: 0 auto; position: relative;}
+.sm{float: left; margin-top: 50px; position: absolute;}
+/* .cont ul li{border: 1px solid #333333; border-bottom: 0;} */
+.cont .sm>li:first-child{background: #85695b url(../../images/lnb_bg.png) no-repeat center bottom; height: 150px; width: 250px; text-align: center; color: #ffffff; line-height: 150px;}
+.cont .sm>li{width: 249px; background: #ffffff; text-align: left; border: 1px solid #333333; border-bottom: 0;}
+.cont .sm>li span{font-size: 20px; line-height: 20px; text-align: center; width: 20px; height: 20px}
+.cont .sm>li>a{width: 215px; padding: 20px; color: #333333; display: block;}
+.cont .sm>li:last-child{border-bottom: 1px solid #333333;}
+.cont .sm>li>ul{width: 249px; background: #f5f5f5; line-height: 50px;}
+.cont .sm>li>ul>li>a{padding: 0 20px; color: #000000;}
+.cont .sm>li>ul>li:first-child{border-top: 1px solid #333333;}
+
+.cont .title{float: right; margin-left: 40px; width: 1123px; margin-top: 50px;}
+.cont .title>h2{font-size: 35px; padding-bottom: 10px;}
+.cont .title .titleImg1>img{width: 40px; height: 40px; float: left;}
+.cont .title .titleImg1>span{font-size: 20px; width: 300px; height: 50px; line-height: 40px; display: block; float: left; margin-left: 10px;}
+.cont .title .titleImg2>.shar{width: 40px; height: 40px; background: #ffffff url(../../images/ico_sns.png) no-repeat 0px 0px; display: block; border-radius: 50px; float: left;}
+.cont .title .titleImg2>.print{width: 40px; height: 40px; background: #ffffff url(../../images/ico_sns.png) no-repeat 0px -40px; display: block; border-radius: 50px; float: left; margin-left: 10px;}
+
+.contwrap2{width: 100%; height: auto; display: inline-block; background: #ffffff;}
+.questionwrap{float: right; width: 1123px; margin-top: 30px;}
+.questionBox{float: right; width: 1123px; border: 1px solid #333333; padding: 5px; line-height: 30px; margin-bottom: 10px; box-sizing: border-box;}
+.cont .questionBox li{border: 0;}
+.q{width: 40px; height: 40px; color: #ffffff; background: #85695b; border-radius: 50px; font-size: 30px; text-align: center; display: inline-block;}
+.a{width: 40px; height: 40px; color: #ffffff; background: #85695b; border-radius: 50px; font-size: 30px; text-align: center; display: inline-block; margin: 0;}
+.answer{margin-top: 10px; background: #f8f8f8;}
+.answer>li{margin-left: 45px;}
+.answer>li .a{margin-left: -45px;}
+
+.next{width: 1123px; margin-bottom: 20px; text-align:center; margin-top: 10px;}
+.next>a{font-size: 20px; line-height: 30px; width: 30px; height: 30px; display: inline-block;}
+.next>a.active{background: #000000; color: #ffffff;}
+
+.footerWrap1{background: #dddfe3;}
+#topfooter{width: 1420px; height: 90px; margin: 0 auto; background: #dddfe3; line-height: 90px; font-size: 18px;}
+	#topfooter>a{color: #000000; padding: 0 20px; border-right: 1px solid #000000;}
+	#topfooter>a:first-child{color: #4978ba; padding-left: 0;}
+	#topfooter>a:nth-child(3){padding-right: 0; border: 0;}
+	#topfooter .box{float: right; width: 400px; height: 70px; background: #ffffff; margin: 10px 0;}
+	#topfooter .box>select{float: left; width: 280px; height: 70px; background: #ffffff; border: 0; font-size: 20px; margin-left: 20px; color: #444444; margin-right: 20px;}
+	#topfooter .box>a{float: right; width: 75px; height: 70px; background: #ffffff; border-left: 1px solid #dddfe3; font-size: 20px; text-align: center; line-height: 70px; color: #444444;}
+
+.footerWrap2{background: #f8f8f8;}
+#bottomfooter{width: 1420px; height: 139px; margin: 0 auto; background: #f8f8f8; padding-top: 20px; color: #666666; font-size: 18px;}
+
+/* 제이쿼리 닫았을 때의 스타일 */
+.question>li.closed{cursor: pointer;}
+.answer>li.closed{display: none;}

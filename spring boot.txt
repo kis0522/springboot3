@@ -1,0 +1,9 @@
+https://start.spring.io/
+
+무조건 들어감
+Spring Boot DevTools 
+Spring Web 
+
+그 외
+Lombok
+Thymeleaf 
