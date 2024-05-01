@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/mainlayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link rel="stylesheet" href="css/sub05.css"/>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="contwrap1">
+        <div class="cont">
+            <ul class="sm">
+                <li><h2>이용 안내</h2></li>
+                <li><a href="#" tabindex="58">책등록하기 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="59">책리스트보기 <span class="fr">+</span></a></li>
+                <li><a href="#" tabindex="60">자주하는질문 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="61">책등록하기 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="62">책리스트보기 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="63">자주하는질문 <span class="fr">-</span></a></li>
+            </ul>
+            <div class="title">
+                <h2>도서관 게시판</h2>
+                <div class="titleImg1 fl">
+                    <img src="images/ico_home.png" alt="집" />
+                    <span>> 도서관 마켓 > 도서관 마켓 게시판</span>
+                </div>
+                <div class="titleImg2 fr">
+                    <a href="#" tabindex="64" class="shar"></a>
+                    <a href="#" tabindex="65" class="print"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contwrap2">
+        <div class="cont">
+            <div class="insertbook">
+                <h2>책 정보 등록하기</h2>
+                <form action="#">
+                    <div class="inputbox">
+                        <span>제목 : </span><input type="text"/>
+                    </div>
+                    <div class="inputbox">
+                        <span>가격 : </span><input type="text"/>
+                    </div>
+                    <div class="inputbox">
+                        <span>작성자 : </span><input type="text"/>
+                    </div>
+                    <input type="submit" value="등록" class="save"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

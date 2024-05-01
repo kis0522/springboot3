@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>플레이 하기</title>
+  <style type="text/css">
+		*{padding: 0; margin: 0; border: 0;}
+		body{-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+		a{text-decoration: none; color: #ff66ff;}
+		a:hover{color: #ff000f; cursor:pointer;}
+		.playbox{width: 230px; height: 66px; background: #dddddd; position: absolute; top: 50%; left: 50%; margin-top: -33px; margin-left: -115px; text-align: center;}
+	</style>
+</head>
+<body>
+<div class="playbox">
+  <a th:href="@{/test/play}">OX퀴즈 플레이 하기</a><br>
+  <a th:href="@{/test/c}">퀴즈 등록하기</a><br/>
+  <a th:href="@{/test/ud}">등록된 퀴즈 변경 및 삭제하기</a>
+</div>
+</body>
+</html>

@@ -26,4 +26,9 @@ public class controller {
     public String sub03(){
         return "sub03";
     }
+    @GetMapping("sub04")
+    public String sub04(){ return  "sub04";}
+    @GetMapping("sub05")
+    public String sub05(){ return  "sub05";}
+
 }

@@ -19,31 +19,29 @@ public class TestServiceImpl implements TestService{
         return repository.findAll();
     }
 
+    Integer count = 0;
     @Override
     public Optional<Test> selectOneById(Integer id) {
-        return repository.findById(id);
+        Integer startId;
+        Integer endId = repository.endId();
+        count++;
+        startId = count;
+        if(startId > endId){
+            count = 1;
+            startId = count;
+        }
+        Boolean findId = repository.existsById(startId);
+        while(findId == false){
+            startId++;
+            count = startId;
+            findId = repository.existsById(startId);
+        }
+        return  repository.findById(startId);
     }
 
-    Integer count = -1;
-
     @Override
-    public Optional<Test> selectOneRandomTest() {
-        Integer randId = repository.getRandomId();
-        Integer lastId = repository.lastId();
-        randId.toString();
-        lastId.toString();
-        count++;
-        randId = randId + count;
-        if(randId >= lastId){
-            count = -1;
-        }
-        Boolean findId = repository.existsById(randId);
-        while(findId == false){
-            randId = randId + 1;
-            count++;
-            findId = repository.existsById(randId);
-        }
-        return repository.findById(randId);
+    public Optional<Test>selectOneRandomTest () {
+        return Optional.empty();
     }
 
     @Override
@@ -71,7 +69,6 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public void deleteTestById(Integer id) {
-        count = -1;
         repository.deleteById(id);
     }
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/mainlayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link rel="stylesheet" href="css/sub04.css"/>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="contwrap1">
+        <div class="cont">
+            <ul class="sm">
+                <li><h2>이용 안내</h2></li>
+                <li><a href="#" tabindex="58">책등록하기 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="59">책리스트보기 <span class="fr">+</span></a></li>
+                <li><a href="#" tabindex="60">자주하는질문 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="61">책등록하기 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="62">책리스트보기 <span class="fr">-</span></a></li>
+                <li><a href="#" tabindex="63">자주하는질문 <span class="fr">-</span></a></li>
+            </ul>
+            <div class="title">
+                <h2>도서관 게시판</h2>
+                <div class="titleImg1 fl">
+                    <img src="images/ico_home.png" alt="집" />
+                    <span>> 도서관 마켓 > 도서관 마켓 게시판</span>
+                </div>
+                <div class="titleImg2 fr">
+                    <a href="#" tabindex="64" class="shar"></a>
+                    <a href="#" tabindex="65" class="print"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contwrap2">
+        <div class="cont">
+            <form action="#" id="searchbox">
+                <input type="search" placeholder="도서명을 검색해 주세요"/>
+                <input type="submit" value="검색"/>
+            </form>
+            <table>
+                <thead>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>가격</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="write"><a href="#">글 작성하기</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

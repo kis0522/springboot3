@@ -46,7 +46,7 @@ public class TestController {
         if(!bindingResult.hasErrors()){
             service.insertTest(test);
             redirectAttributes.addFlashAttribute("complete","등록이 완료되었습니다");
-            return "redirect:/test";
+            return "redirect:/test/c";
         }else{
             return showList(testForm, model);
         }
@@ -107,18 +107,35 @@ public class TestController {
         return "redirect:/test";
     }
 
+    Integer nextId = 0;
     @GetMapping("/play")
     public String showTest(TestForm testForm, Model model){
-        Optional<Test> testOpt = service.selectOneRandomTest();
+        Optional<Test> testOpt = service.selectOneById(++nextId);
+
         if(testOpt.isPresent()){
             Optional<TestForm> testFormOpt = testOpt.map(t -> makeTestForm(t));
             testForm = testFormOpt.get();
         }else{
             model.addAttribute("msg","등록된 문제가 없습니다");
+            nextId  = 0;
             return "play";
         }
         model.addAttribute("testForm",testForm);
         return "play";
+    }
+
+    @GetMapping("/c")
+    public String create(){
+        return "c";
+    }
+    @GetMapping("/ud")
+    public String ud(TestForm testForm, Model model){
+        testForm.setNewTest(true);
+        Iterable<Test> list = service.selectAll();
+
+        model.addAttribute("list",list);
+        model.addAttribute("title","변경 폼");
+        return "ud";
     }
 
     @PostMapping("/check")
