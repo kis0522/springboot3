@@ -46,7 +46,7 @@ public class TestController {
         if(!bindingResult.hasErrors()){
             service.insertTest(test);
             redirectAttributes.addFlashAttribute("complete","등록이 완료되었습니다");
-            return "redirect:/test/c";
+            return "redirect:/test";
         }else{
             return showList(testForm, model);
         }
@@ -122,20 +122,6 @@ public class TestController {
         }
         model.addAttribute("testForm",testForm);
         return "play";
-    }
-
-    @GetMapping("/c")
-    public String create(){
-        return "c";
-    }
-    @GetMapping("/ud")
-    public String ud(TestForm testForm, Model model){
-        testForm.setNewTest(true);
-        Iterable<Test> list = service.selectAll();
-
-        model.addAttribute("list",list);
-        model.addAttribute("title","변경 폼");
-        return "ud";
     }
 
     @PostMapping("/check")

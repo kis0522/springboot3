@@ -39,7 +39,7 @@
                 <input type="search" placeholder="도서명을 검색해 주세요"/>
                 <input type="submit" value="검색"/>
             </form>
-            <table>
+            <table th:unless="${#lists.isEmpty(list)}">
                 <thead>
                 <tr>
                     <th>글번호</th>
@@ -50,16 +50,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
+                <tr th:each="obj:${list}">
+                    <td th:text="${obj.id}"></td>
+                    <a th:href="@{/sub05/{id}(id=${obj.id})}"><td th:text="${obj.title}"></td></a>
+                    <td th:text="${obj.price}"></td>
+                    <td th:text="${obj.user}"></td>
+                    <td th:text="${obj.date}"></td>
                 </tr>
                 </tbody>
             </table>
-            <div class="write"><a href="#">글 작성하기</a></div>
+            <p th:if="${#lists.isEmpty(list)}" style="margin: 80px 0; position: relative; right: 33%;">등록된 글이 없습니다.</p>
+            <div class="write"><a href="sub05">글 작성하기</a></div>
         </div>
     </div>
 </div>

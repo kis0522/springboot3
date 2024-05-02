@@ -1,7 +1,7 @@
-package com.example.test.service;
+package com.example.project06.service;
 
-import com.example.test.entity.Test;
-import com.example.test.repository.TestRepository;
+import com.example.project06.entity.Test;
+import com.example.project06.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +18,6 @@ public class TestServiceImpl implements TestService{
     public Iterable<Test> selectAll() {
         return repository.findAll();
     }
-
     Integer count = 0;
     @Override
     public Optional<Test> selectOneById(Integer id) {
@@ -37,19 +36,6 @@ public class TestServiceImpl implements TestService{
             findId = repository.existsById(startId);
         }
         return  repository.findById(startId);
-    }
-
-    @Override
-    public Boolean checkTest(Integer id, Boolean myAnswer) {
-        Boolean check = false;
-        Optional<Test> optTest = repository.findById(id);
-        if(optTest.isPresent()){
-            Test test = optTest.get();
-            if(test.getAnswer().equals(myAnswer)){
-                check = true;
-            }
-        }
-        return check;
     }
 
     @Override
