@@ -4,8 +4,8 @@
       layout:decorate="~{commons/mainlayout}">
 <head>
     <meta charset="UTF-8">
-    <title>게시판</title>
-    <link rel="stylesheet" href="css/sub05.css"/>
+    <title>책 정보 등록</title>
+    <link rel="stylesheet" href="/css/sub05.css"/>
 </head>
 <body>
 <div layout:fragment="content">
@@ -23,7 +23,7 @@
             <div class="title">
                 <h2>도서관 마켓 서비스</h2>
                 <div class="titleImg1 fl">
-                    <img src="images/ico_home.png" alt="집" />
+                    <img src="/images/ico_home.png" alt="집" />
                     <span>> 도서관 마켓 > 도서관 책 등록하기</span>
                 </div>
                 <div class="titleImg2 fr">
@@ -36,20 +36,25 @@
     <div class="contwrap2">
         <div class="cont">
             <div class="insertbook">
-                <h2>책 정보 등록하기</h2>
-                <form action="sub04">
-                    <div class="inputbox">
-                        <span>제목 : </span><input type="text" placeholder="책 제목을 입력해주세요."/>
-                    </div>
-                    <div class="inputbox">
-                        <span>가격 : </span><input type="text" placeholder="책의 가격을 입력해주세요."/>
-                    </div>
-                    <div class="inputbox">
-                        <span>작성자 : </span><input type="text" placeholder="작성자님의 이름을 적어주세요."/>
-                    </div>
-                    <input type="submit" value="등록하기" class="save"/>
-
+                <h2 th:unless="${modify} == 'modify'">책 정보 등록하기</h2>
+                <h2 th:if="${modify} == 'modify'">책 정보 수정하기</h2>
+                <form method="POST" th:action="${testForm.newTest}? @{/sub04/insert} : @{/sub05/update}" th:object="${testForm}">
+                    <div class="inputbox"><span>제목 : </span><input type="text" placeholder="책 제목을 입력해주세요." th:field="*{title}"/></div><br/>
+                    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color:red; margin-left: 75px;"></div>
+                    <div class="inputbox"><span>가격 : </span><input type="text" placeholder="책의 가격을 입력해주세요." th:field="*{price}" class="price"/></div><br/>
+                    <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color:red; margin-left: 75px;"></div>
+                    <div class="inputbox"><span>작성자 : </span><input type="text" placeholder="작성자님의 이름을 적어주세요." th:field="*{user}"/></div><br/>
+                    <div th:if="${#fields.hasErrors('user')}" th:errors="*{user}" style="color:red; margin-left: 75px;"></div>
+                    <input type="hidden" name="id" th:value="${id}">
+                    <input type="submit" value="등록하기" class="save" th:unless="${modify} == 'modify'">
+                    <input type="submit" value="수정하기" class="save" th:if="${modify} == 'modify'"/>
+                    <p th:if="${complete}" th:text="${complete}" style="width: 100%; text-align:center; margin-top: 5px; color: blue; font-weight: bold;"></p>
                 </form>
+                <form method="POST" th:action="@{/sub05/delete}">
+                    <input type="hidden" name="id" th:value="${id}">
+                    <input type="submit" value="삭제하기" class="delete" th:if="${modify} == 'modify'"/>
+                </form>
+                <a th:href="@{/sub04}"><input type="button" value="목록으로" class="menu" th:if="${modify} == 'modify'"/></a>
             </div>
         </div>
     </div>

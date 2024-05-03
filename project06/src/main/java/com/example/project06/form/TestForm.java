@@ -1,6 +1,7 @@
 package com.example.project06.form;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class TestForm {
     private Integer id;
     @NotBlank
     private String title;
-    @NotBlank
+    @NotNull
     private Integer price;
     @NotBlank
     private String user;

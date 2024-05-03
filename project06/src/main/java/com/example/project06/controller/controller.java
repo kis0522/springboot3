@@ -52,11 +52,14 @@ public class controller {
         model.addAttribute("title","등록 폼");
         return "sub04";
     }
-    @GetMapping("sub05")
-    public String sub05(){
+    @GetMapping("/sub05")
+    public String sub05(TestForm testForm, Model model){
+        testForm.setNewTest(true);
+        Iterable<Test> list = service.selectAll();
+        model.addAttribute("list",list);
         return "sub05";
     }
-    @PostMapping("/insert")
+    @PostMapping("sub04/insert")
     public String insert(@Validated TestForm testForm, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
         Test test = new Test();
         test.setTitle(testForm.getTitle());
@@ -70,19 +73,20 @@ public class controller {
             redirectAttributes.addFlashAttribute("complete","등록이 완료되었습니다");
             return "redirect:/sub04";
         }else{
-            return showList(testForm, model);
+            return sub05(testForm, model);
         }
     }
-    @GetMapping("/{id}")
+    @GetMapping("sub05/{id}")
     public String showUpdate(TestForm testForm, @PathVariable Integer id, Model model){
         Optional<Test> testOpt = service.selectOneById(id);
         Optional<TestForm> testFormOpt = testOpt.map(t -> makeTestForm(t));
+        model.addAttribute("modify","modify");
 
         if(testFormOpt.isPresent()){
             testForm = testFormOpt.get();
         }
         makeUpdateModel(testForm, model);
-        return "sub04";
+        return "sub05";
     }
 
     private void makeUpdateModel(TestForm testForm, Model model){
@@ -92,12 +96,12 @@ public class controller {
         model.addAttribute("title","변경 폼");
     }
 
-    @PostMapping("/update")
+    @PostMapping("sub05/update")
     public String update(@Validated TestForm testForm, BindingResult result, Model model, RedirectAttributes redirectAttributes){
         Test test = makeTest(testForm);
         if(!result.hasErrors()){
             service.updateTest(test);
-            redirectAttributes.addFlashAttribute("complete","변경이 완료되었습니다");
+            redirectAttributes.addFlashAttribute("complete","수정이 완료되었습니다");
             return "redirect:/sub05/" + test.getId();
         }else{
             makeUpdateModel(testForm,model);
@@ -107,7 +111,8 @@ public class controller {
     public Test makeTest(TestForm testForm){
         Test test = new Test();
         test.setId(testForm.getId());
-        test.setDate(testForm.getDate());
+        LocalDate localDate = LocalDate.now();
+        test.setDate(localDate);
         test.setUser(testForm.getUser());
         test.setTitle(testForm.getTitle());
         test.setPrice(testForm.getPrice());
@@ -123,7 +128,7 @@ public class controller {
         form.setNewTest(false);
         return form;
     }
-    @PostMapping("/delete")
+    @PostMapping("sub05/delete")
     public String delete(@RequestParam("id") String id, Model model, RedirectAttributes redirectAttributes){
         service.deleteTestById(Integer.parseInt(id));
         redirectAttributes.addFlashAttribute("delcomplete","삭제 완료했습니다");

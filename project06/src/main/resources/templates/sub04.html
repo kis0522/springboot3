@@ -52,7 +52,7 @@
                 <tbody>
                 <tr th:each="obj:${list}">
                     <td th:text="${obj.id}"></td>
-                    <a th:href="@{/sub05/{id}(id=${obj.id})}"><td th:text="${obj.title}"></td></a>
+                    <td><a th:href="@{/sub05/{id}(id=${obj.id})}" th:text="${obj.title}"></a></td>
                     <td th:text="${obj.price}"></td>
                     <td th:text="${obj.user}"></td>
                     <td th:text="${obj.date}"></td>

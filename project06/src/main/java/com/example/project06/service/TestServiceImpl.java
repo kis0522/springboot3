@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -16,26 +17,20 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public Iterable<Test> selectAll() {
-        return repository.findAll();
+        ArrayList<Test> reverseBoard = new ArrayList();
+        int end = repository.endId();
+        for(int i = 0; i<end; i++){
+            if(repository.existsById(end-i)){
+                reverseBoard.add(repository.findById(end-i).get());
+            }
+        }
+        Iterable<Test> iterable = reverseBoard;
+        return iterable;
     }
     Integer count = 0;
     @Override
     public Optional<Test> selectOneById(Integer id) {
-        Integer startId;
-        Integer endId = repository.endId();
-        count++;
-        startId = count;
-        if(startId > endId){
-            count = 1;
-            startId = count;
-        }
-        Boolean findId = repository.existsById(startId);
-        while(findId == false){
-            startId++;
-            count = startId;
-            findId = repository.existsById(startId);
-        }
-        return  repository.findById(startId);
+        return repository.findById(id);
     }
 
     @Override
