@@ -18,14 +18,18 @@ public class TestServiceImpl implements TestService{
     @Override
     public Iterable<Test> selectAll() {
         ArrayList<Test> reverseBoard = new ArrayList();
-        int end = repository.endId();
+        int end = 0;
+        if(repository.endId() != null){
+            end = repository.endId();
+        }else{
+            end = 0;
+        }
         for(int i = 0; i<end; i++){
             if(repository.existsById(end-i)){
                 reverseBoard.add(repository.findById(end-i).get());
             }
         }
         Iterable<Test> iterable = reverseBoard;
-
         return iterable;
     }
     Integer count = 0;
