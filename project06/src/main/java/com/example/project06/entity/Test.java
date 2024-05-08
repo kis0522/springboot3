@@ -14,8 +14,9 @@ import java.time.LocalDate;
 public class Test {
     @Id
     private Integer id;
+    private Integer num;
     private String title;
-    private Integer price;
+    private String price;
     private String user;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate date;

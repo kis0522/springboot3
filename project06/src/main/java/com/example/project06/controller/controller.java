@@ -63,6 +63,7 @@ public class controller {
     public String insert(@Validated TestForm testForm, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
         Test test = new Test();
         test.setTitle(testForm.getTitle());
+        test.setNum(service.selectLastBn()+1);
         test.setPrice(testForm.getPrice());
         test.setUser(testForm.getUser());
         LocalDate localDate = LocalDate.now();
@@ -111,6 +112,7 @@ public class controller {
     public Test makeTest(TestForm testForm){
         Test test = new Test();
         test.setId(testForm.getId());
+        test.setNum(testForm.getNum());
         LocalDate localDate = LocalDate.now();
         test.setDate(localDate);
         test.setUser(testForm.getUser());
@@ -121,6 +123,7 @@ public class controller {
     public TestForm makeTestForm(Test test){
         TestForm form = new TestForm();
         form.setId(test.getId());
+        form.setNum(test.getNum());
         form.setDate(test.getDate());
         form.setUser(test.getUser());
         form.setTitle(test.getTitle());

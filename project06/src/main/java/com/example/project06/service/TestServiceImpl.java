@@ -18,7 +18,7 @@ public class TestServiceImpl implements TestService{
     @Override
     public Iterable<Test> selectAll() {
         ArrayList<Test> reverseBoard = new ArrayList();
-        int end = 0;
+        int end;
         if(repository.endId() != null){
             end = repository.endId();
         }else{
@@ -32,7 +32,6 @@ public class TestServiceImpl implements TestService{
         Iterable<Test> iterable = reverseBoard;
         return iterable;
     }
-    Integer count = 0;
     @Override
     public Optional<Test> selectOneById(Integer id) {
         return repository.findById(id);
@@ -50,6 +49,24 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public void deleteTestById(Integer id) {
+        Integer bn = repository.getNumById(id);
+        repository.updateBn(bn);
         repository.deleteById(id);
     }
+
+    @Override
+    public Integer selectLastBn() {
+        if(repository.count()==0){
+            return 0;
+        }
+        return repository.endBn();
+    }
+
+    @Override
+    public Integer getSizeOfBoard() {
+        long count = repository.count();
+        int result = Long.valueOf(count).intValue();
+        return result;
+    }
+
 }

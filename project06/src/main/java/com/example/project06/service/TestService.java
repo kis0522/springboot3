@@ -10,4 +10,6 @@ public interface TestService {
     void insertTest(Test test);
     void updateTest(Test test);
     void deleteTestById(Integer id);
+    Integer selectLastBn();
+    Integer getSizeOfBoard();
 }

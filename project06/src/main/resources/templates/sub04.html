@@ -45,13 +45,13 @@
                     <th>글번호</th>
                     <th>제목</th>
                     <th>가격</th>
-                    <th>작성자</th>
+                    <th>저자</th>
                     <th>날짜</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="obj:${list}">
-                    <td th:text="${obj.id}"></td>
+                    <td th:text="${obj.num}"></td>
                     <td><a th:href="@{/sub05/{id}(id=${obj.id})}" th:text="${obj.title}"></a></td>
                     <td th:text="${obj.price}"></td>
                     <td th:text="${obj.user}"></td>

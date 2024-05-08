@@ -14,10 +14,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class TestForm {
     private Integer id;
+    private Integer num;
     @NotBlank
     private String title;
-    @NotNull
-    private Integer price;
+    @NotBlank
+    private String price;
     @NotBlank
     private String user;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)

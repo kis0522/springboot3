@@ -6,6 +6,31 @@
     <meta charset="UTF-8">
     <title>책 정보 등록</title>
     <link rel="stylesheet" href="/css/sub05.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+  function comma(str) {
+        str = String(str);
+        return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+    }
+
+    function uncomma(str) {
+        str = String(str);
+        return str.replace(/[^\d]+/g, '');
+    }
+
+    function inputNumberFormat(obj) {
+        obj.value = comma(uncomma(obj.value));
+    }
+
+    function inputOnlyNumberFormat(obj) {
+        obj.value = onlynumber(uncomma(obj.value));
+    }
+
+    function onlynumber(str) {
+	    str = String(str);
+	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
+	}
+	</script>
 </head>
 <body>
 <div layout:fragment="content">
@@ -41,11 +66,12 @@
                 <form method="POST" th:action="${testForm.newTest}? @{/sub04/insert} : @{/sub05/update}" th:object="${testForm}">
                     <div class="inputbox"><span>제목 : </span><input type="text" placeholder="책 제목을 입력해주세요." th:field="*{title}"/></div><br/>
                     <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color:red; margin-left: 75px;"></div>
-                    <div class="inputbox"><span>가격 : </span><input type="text" placeholder="책의 가격을 입력해주세요." th:field="*{price}" class="price"/></div><br/>
+                    <div class="inputbox"><span>가격 : </span><input type="text" maxlength="10" onkeyup="inputNumberFormat(this);" placeholder="책의 가격을 입력해주세요." th:field="*{price}" class="price"/></div><br/>
                     <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color:red; margin-left: 75px;"></div>
-                    <div class="inputbox"><span>작성자 : </span><input type="text" placeholder="작성자님의 이름을 적어주세요." th:field="*{user}"/></div><br/>
+                    <div class="inputbox"><span>저자 : </span><input type="text" placeholder="저자의 이름을 적어주세요." th:field="*{user}"/></div><br/>
                     <div th:if="${#fields.hasErrors('user')}" th:errors="*{user}" style="color:red; margin-left: 75px;"></div>
                     <input type="hidden" name="id" th:value="${id}">
+                    <input type="hidden" th:field="*{num}">
                     <input type="submit" value="등록하기" class="save" th:unless="${modify} == 'modify'">
                     <input type="submit" value="수정하기" class="save" th:if="${modify} == 'modify'"/>
                     <p th:if="${complete}" th:text="${complete}" style="width: 100%; text-align:center; margin-top: 5px; color: blue; font-weight: bold;"></p>

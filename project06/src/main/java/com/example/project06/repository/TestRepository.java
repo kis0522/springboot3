@@ -16,7 +16,7 @@ public interface TestRepository extends CrudRepository<Test,Integer> {
 
     //파라미터로 받아온 아이디 값의 게시판번호 가져오기
     @Query("SELECT num FROM test WHERE id = :id")
-    Integer getBoardNumById(@Param("id") Integer id);
+    Integer getNumById(@Param("id") Integer id);
 
     //삭제한 게시물의 뒷번호 게시판번호 모두 1씩 감소시키기
     @Modifying
