@@ -2,7 +2,7 @@ package com.shop.repository;
 
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.shop.constrant.ItemSellStauts;
+import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
 import com.shop.entity.QItem;
 import jakarta.persistence.EntityManager;
@@ -32,7 +32,7 @@ class ItemRepositoryTest {
         item.setItemNm("테스트 상품");
         item.setPrice(10000);
         item.setItemDetail("테스트 상품 상세 설명");
-        item.setItemSellStauts(ItemSellStauts.SELL);
+        item.setItemSellStatus(ItemSellStatus.SELL);
         item.setStockNumber(100);
         item.setRegTime(LocalDateTime.now());
         item.setUpdateTime(LocalDateTime.now());
@@ -47,7 +47,7 @@ class ItemRepositoryTest {
             item.setItemNm("테스트 상품" + i);
             item.setPrice(10000 + i);
             item.setItemDetail("테스트 상품 상세 설명" + i);
-            item.setItemSellStauts(ItemSellStauts.SELL);
+            item.setItemSellStatus(ItemSellStatus.SELL);
             item.setStockNumber(100);
             item.setRegTime(LocalDateTime.now());
             item.setUpdateTime(LocalDateTime.now());
@@ -121,7 +121,7 @@ class ItemRepositoryTest {
         JPAQueryFactory queryFactory = new JPAQueryFactory(em);
         QItem qItem = QItem.item;
         JPAQuery<Item> query = queryFactory.selectFrom(qItem)
-                .where(qItem.itemSellStauts.eq(ItemSellStauts.SELL))
+                .where(qItem.itemSellStatus.eq(ItemSellStatus.SELL))
                 .where(qItem.itemDetail.like("%"+ "테스트 상품 상세 설명" + "%"))
                 .orderBy(qItem.price.desc());
         List<Item> itemList = query.fetch();

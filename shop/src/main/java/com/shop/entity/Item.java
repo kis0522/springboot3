@@ -1,6 +1,6 @@
 package com.shop.entity;
 
-import com.shop.constrant.ItemSellStauts;
+import com.shop.constant.ItemSellStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,7 +39,7 @@ public class Item {
 
     //상품 판매 상태
     @Enumerated(EnumType.STRING)
-    private ItemSellStauts itemSellStauts;
+    private ItemSellStatus itemSellStatus;
 
     //등록시간
     private LocalDateTime regTime;
