@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+	<div id="product_detail_page" class="product_detail" data-role="page" data-url="product_detail_page" layout:fragment="content">
+        <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+            <div class="header_wrap">
+                <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
+                <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+                <div class="head_icon">
+                    <div class="basket"><a href="#"></a></div>
+                </div>
+            </div>
+        </div><!--header-->
+        <div class="conts_wrap" data-role="content">
+            <div class="sec line">
+                <div class="product_detail_img sec_width">
+                    <img src="images/cream_bread.jpg" alt="크림대빵 상품 이미지">
+                </div>
+                <div class="product_tit_wrap sec_width">
+                    <div class="tit_wrap">
+                        <p class="tit">삼립) 크림대빵</p>
+                        <p class="icon share"></p>
+                    </div>
+                    <div class="price">8,800원</div>
+                </div>
+                <div class="info_wrap sec_width">
+                    <div>
+                        <p class="info_tit">재고 현황</p>
+                        <p class="point_color">1개남음</p>
+                    </div>
+                    <div>
+                        <p class="info_tit">구매 제한</p>
+                        <p class="point">일일 최대 1개까지 구매 가능</p>
+                    </div>
+                    <div class="review_wrap">
+                        <p class="star icon"></p>
+                        <p class="score">4.5</p>
+                        <p class="rview_num">(150)</p>· &nbsp;
+                        <a href="#">후기보기</a>
+                    </div>
+                    <button class="basket_btn">장바구니 담기</button>
+                </div>
+            </div>
+            <div class="sec">
+                <div class="detail_info sec_width">
+                    <p>상품 정보 제공 고시</p>
+                    <div class="detail_info_img">
+                        <img src="images/product_info.jpg" alt="상품 정보 제공 고시 이미지">
+                    </div>
+                    <div class="notice">
+                        *오프라인 개별 점보포부터 배달되는 상품이므로 주문하신 상품의 제조년월일 및 소비기한에 대한 정확한 확인이 어렵습니다. 본 상품의 제조년월일 및 소비기산에 대한 정보는 해당 점포로 직접 문의하여 주시기 바랍니다. 
+                    </div>
+                </div>
+            </div>
+        </div><!--content-->
+        <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <ul>
+                <li class="home">
+                    <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+                </li>
+                <li class="search on">
+                    <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+                </li>
+                <li class="recipe">
+                    <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+                </li>
+                <li class="user">
+                    <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+                </li>
+            </ul>
+        </div><!--ui_fixed-->
+	</div><!--product_detail_page-->
+</body>
+</html>

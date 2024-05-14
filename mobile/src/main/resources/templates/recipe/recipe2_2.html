@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+<div data-role="page" id="recipe2_2" class="recipe2" data-url="recipe2_2" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <h2 class="page_tit">디저트/샐러드</h2>
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <input type="search" value="티라미수"/>
+    <div class="swiper recipe_tab">
+      <ul class="cf swiper-wrapper">
+        <li class="fl swiper-slide on"><a href="#">별점순</a></li>
+        <li class="fl swiper-slide"><a href="#">조회순</a></li>
+        <li class="fl swiper-slide"><a href="#">최신순</a></li>
+        <li class="fl swiper-slide"><a href="#">가격 높은순</a></li>
+        <li class="fl swiper-slide"><a href="#">가격 낮은순</a></li>
+      </ul>
+    </div>
+    <div class="recipe_tabmenu">
+      <ul class="food_cont sec sec_width">
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg2.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">연두부 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg7.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">생크림파이 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg8.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 라떼</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg9.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 마카롱</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg10.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">바나나 티라미수 케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg11.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 컵케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="food_cont sec sec_width">
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg1.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">연두부 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg7.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">생크림파이 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg8.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 라떼</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg9.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 마카롱</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg10.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">바나나 티라미수 케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg11.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 컵케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="food_cont sec sec_width">
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg1.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">연두부 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg7.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">생크림파이 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg8.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 라떼</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg9.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 마카롱</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg10.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">바나나 티라미수 케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg11.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 컵케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="food_cont sec sec_width">
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg1.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">연두부 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg7.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">생크림파이 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg8.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 라떼</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg9.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 마카롱</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg10.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">바나나 티라미수 케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg11.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 컵케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="food_cont sec sec_width">
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg1.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">연두부 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg7.png" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">생크림파이 티라미수</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg8.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 라떼</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg9.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 마카롱</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg10.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">바나나 티라미수 케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="food_img">
+          <a href="#recipe_3">
+            <p class="recipe_img img">
+              <img src="images/foodimg11.jpg" alt="레시피 이미지"/>
+            </p>
+            <div class="cont_info">
+              <p class="tit">티라미수 컵케익</p>
+              <div class="review_wrap">
+                <p class="star icon"></p>
+                <p class="score">5.0</p>
+                <p class="rview_num">(311)</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <ul>
+      <li class="home">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe on">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--recipe2_2_page_wrap-->
+</body>
+</html>

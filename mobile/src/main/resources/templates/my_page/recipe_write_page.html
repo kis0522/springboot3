@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+<div id="recipe_write_page" class="recipe_write" data-role="page" data-url="recipe_write_page" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <h2 class="page_tit">레시피 작성</h2>
+      <input type="submit" value="저장" class="recipe_save" form="#recipe_write_form" data-rel="back" data-direction="reverse">
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <form action="#my_page" id="recipe_write_form" class="write_box" method="get" data-ajax="false">
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">레시피 제목</p></div>
+        <input type="text" placeholder="예) 소고기 미역 라면" class="tit">
+      </div>
+      <div class="recipe_photo_wrap write_input">
+        <input type="file" name="photo" id="photo" class="input_file" onchange="loadFile(this, 1)">
+        <label for="photo" class="photo_icon">
+          <p class="icon"></p>
+          <span>요리 대표 사진을 등록해 주세요.</span>
+          <span class="tip">음식 사진 외 사람/동물 등의 사진은 삼가해주세요.</span>
+        </label>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">요리소개</p></div>
+        <textarea name="introduce" class="introduce" placeholder="이 레시피의 탄생배경을 적어주세요."></textarea>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">카테고리</p></div>
+        <div class="sub_tit category_select select_box_btn"><p class="default">::종류별::</p><p class="icon"></p></div>
+        <div class="category_box select_box">
+          <ul>
+            <li class="text">종류</li>
+            <li>
+              <input type="radio" name="option" id="option01" value="도시락/김밥">
+              <label for="option01">도시락/김밥</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option02" value="햄버거/샌드위치">
+              <label for="option02">햄버거/샌드위치</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option03" value="라면/면">
+              <label for="option03">라면/면</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option04" value="치킨">
+              <label for="option04">치킨</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option05" value="디저트/빵/과자">
+              <label for="option05">디저트/빵/과자</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option06" value="음료수/차/유제품">
+              <label for="option06">음료수/차/유제품</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option07" value="술/술안주">
+              <label for="option07">술/술안주</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option08" value="즉석식품">
+              <label for="option08">즉석식품</label>
+            </li>
+            <li>
+              <input type="radio" name="option" id="option09" value="기타">
+              <label for="option09">기타</label>
+            </li>
+          </ul>
+        </div>
+        <!-- <select name="category" class="">
+            <option ></option>
+            <option value="도시락/김밥">도시락/김밥</option>
+            <option value="햄버거/샌드위치">햄버거/샌드위치</option>
+            <option value="라면/면">라면/면</option>
+            <option value="치킨">치킨</option>
+            <option value="디저트/빵/과자">디저트/빵/과자</option>
+            <option value="음료수/차/유제품">음료수/차/유제품</option>
+            <option value="술/술안주">술/술안주</option>
+            <option value="즉석식품">즉석식품</option>
+            <option value="기타">기타</option>
+        </select> -->
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">요리정보</p></div>
+        <div class="select_line">
+          <div class="sub_tit select_box_btn"><p class="default">인원</p>
+            <p class="icon"></p></div>
+          <div class="recipe_num_box select_box">
+            <ul>
+              <li class="text">인원</li>
+              <li>
+                <input type="radio" name="recipe_num" id="recipe_num01" value="1인분">
+                <label for="recipe_num01">1인분</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_num" id="recipe_num02" value="2인분">
+                <label for="recipe_num02">2인분</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_num" id="recipe_num03" value="3인분">
+                <label for="recipe_num03">3인분</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_num" id="recipe_num04" value="4인분">
+                <label for="recipe_num04">4인분</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_num" id="recipe_num05" value="5인분이상">
+                <label for="recipe_num05">5인분이상</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="select_line">
+          <div class="sub_tit select_box_btn"><p class="default">요리시간</p>
+            <p class="icon"></p></div>
+          <div class="recipe_time_box select_box">
+            <ul>
+              <li class="text">요리시간</li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time01" value="5분이내">
+                <label for="recipe_time01">5분이내</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time02" value="10분이내">
+                <label for="recipe_time02">10분이내</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time03" value="15분이내">
+                <label for="recipe_time03">15분이내</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time04" value="30분이내">
+                <label for="recipe_time04">30분이내</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time05" value="1시간이내">
+                <label for="recipe_time05">1시간이내</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time06" value="2시간이내">
+                <label for="recipe_time06">2시간이내</label>
+              </li>
+              <li>
+                <input type="radio" name="recipe_time" id="recipe_time07" value="2시간이상">
+                <label for="recipe_time07">2시간이상</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">재료</p></div>
+        <div class="list_wrap stuff_list_wrap">
+          <div class="line stuff_line">
+            <div class="input_wrap">
+              <input type="text" placeholder="예) 소고기" class="stuff">
+              <input type="text" placeholder="예) 300g" class="stuff_info">
+            </div>
+          </div>
+          <div class="line">
+            <div class="input_wrap">
+              <input type="text" placeholder="예) 양파" class="stuff">
+              <input type="text" placeholder="예) 1/2개" class="stuff_info">
+            </div>
+          </div>
+        </div>
+        <div class="stuff_plus plus_btn">
+          <p class="icon"></p>
+          <p class="text">재료추가</p>
+        </div>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">양념</p></div>
+        <div class="list_wrap spices_list_wrap">
+          <div class="line">
+            <div class="input_wrap">
+              <input type="text" placeholder="예) 간장" class="spices">
+              <input type="text" placeholder="예) 1.5T" class="spices_info">
+            </div>
+          </div>
+          <div class="line">
+            <div class="input_wrap">
+              <input type="text" placeholder="예) 맛술" class="spices">
+              <input type="text" placeholder="예) 2T" class="spices_info">
+            </div>
+          </div>
+        </div>
+        <div class="spices_plus plus_btn">
+          <p class="icon"></p>
+          <p class="text">양념추가</p>
+        </div>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">요리순서</p></div>
+        <div class="list_wrap recipe_list_wrap">
+          <div class="line">
+            <div class="list_li">
+              <div class="list_text">
+                <p class="list_num">1</p>
+                <textarea name="recipe_list01" class="recipe_list" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 잘라주세요."></textarea>
+              </div>
+              <div class="photo_plus_box">
+                <label for="recipe_img01"><img src="images/insert_img.svg" alt="" id="fileimg7"/></label>
+                <input type="file" id="recipe_img01" name="recipe_img01" accept="image/*" onchange="loadFile(this,7)" class="input_file">
+              </div>
+            </div>
+          </div>
+          <div class="line">
+            <div class="list_li">
+              <div class="list_text">
+                <p class="list_num">2</p>
+                <textarea name="recipe_list02" class="recipe_list" placeholder="예) 준비된 양념으로 먼저 고기를 재워 둡니다."></textarea>
+              </div>
+              <div class="photo_plus_box">
+                <label for="recipe_img02"><img src="images/insert_img.svg" alt="" id="fileimg8"/></label>
+                <input type="file" id="recipe_img02" name="recipe_img02" accept="image/*" onchange="loadFile(this,8)" class="input_file">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list_plus plus_btn">
+          <p class="icon"></p>
+          <p class="text">요리순서추가</p>
+        </div>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">완성사진</p></div>
+        <div class="swiper complete_photo_list_wrap">
+          <ul class="cf complete_photo_list swiper-wrapper">
+            <li class="fl photo_plus_box swiper-slide">
+              <label for="complete_photo01"><img src="images/insert_img.svg" alt="" id="fileimg2"/></label>
+              <input type="file" id="complete_photo01" name="complete_photo01" accept="image/*" onchange="loadFile(this,2)">
+            </li>
+            <li class="fl photo_plus_box swiper-slide">
+              <label for="complete_photo02"><img src="images/insert_img.svg" alt="" id="fileimg3"/></label>
+              <input type="file" id="complete_photo02" name="complete_photo02" accept="image/*" onchange="loadFile(this,3)">
+            </li>
+            <li class="fl photo_plus_box swiper-slide">
+              <label for="complete_photo03"><img src="images/insert_img.svg" alt="" id="fileimg4"/></label>
+              <input type="file" id="complete_photo03" name="complete_photo03" accept="image/*" onchange="loadFile(this,4)">
+            </li>
+            <li class="fl photo_plus_box swiper-slide">
+              <label for="complete_photo04"><img src="images/insert_img.svg" alt="" id="fileimg5"/></label>
+              <input type="file" id="complete_photo04" name="complete_photo04" accept="image/*" onchange="loadFile(this,5)">
+            </li>
+            <li class="fl photo_plus_box swiper-slide">
+              <label for="complete_photo05"><img src="images/insert_img.svg" alt="" id="fileimg6"/></label>
+              <input type="file" id="complete_photo05" name="complete_photo05" accept="image/*" onchange="loadFile(this,6)">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">팁/주의사항</p></div>
+        <textarea name="" id="" placeholder="예) 고기요리에는 소금보다 설탕을 먼저 넣어야 닷맛이 겉돌지 않고 육질이 부드러워요."></textarea>
+      </div>
+      <div class="write_input">
+        <div class="tit_bg"><p class="write_tit">태그</p></div>
+        <input type="text" placeholder="예) 고기, 미역, 라면">
+      </div>
+    </form>
+  </div>
+</div><!--recipe_write_page_wrap-->
+</body>
+</html>

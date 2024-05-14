@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+<div data-role="page" class="search_map" id="search_map_page" layout:fragment="content">
+  <div id="block" class="fakeLoader">
+    <div class="fl fl-spinner spinner2"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>
+  </div>
+  <div id="popup_push_product" class="center">
+    {{product}} 상품 1개를 <br/> 장바구니에 담았습니다.
+  </div>
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <input type="search" name="search" class="main_search" placeholder="검색어를 입력해 주세요.">
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div id="section" data-role="content" class="conts_wrap">
+    <div class="map_wrap">
+      <div id="input_wrap" class="cf">
+        <input type="search" id="input_location" placeholder="원하시는 주소를 입력해 주세요" usemap="#input_img"/>
+        <div id="submit"></div>
+      </div>
+      <div id="map"></div>
+      <div id="convenience" class="btn"></div>
+    </div>
+    <div class="sec location_info_wrap">
+      <div id="location_info">
+        <div class="info_head sec_width">
+          <div class="info_tit_wrap">
+            <div class="tit">매장별 재고</div>
+            <a class="reset" href="#"></a>
+          </div>
+          <div class="info_dc">
+            <p class="icon info"></p>
+            구매시점에 따라 실제 재고와 다를 수 있습니다.
+          </div>
+        </div>
+        <div class="product_info_wrap">
+          <div class="product_wrap info_box">
+            <a href="#product_detail_page" class="product sec_width">
+              <div class="pd_img img"></div>
+              <div class="description">
+                <div class="tit_wrap">
+                  <p class="tit">삼가)뉴참치마요골드</p>
+                </div>
+                <div class="sub_cont">
+                  <p class="place">GS25편의점</p>
+                  <p class="price">1,000원</p>
+                </div>
+              </div>
+            </a>
+            <div class="push_wrap sec_width">
+              <p class="push">담기</p>
+            </div>
+          </div>
+          <div class="store_wrap info_box">
+            <a href="#" class="store sec_width">
+              <div class="st_img img"></div>
+              <div class="description">
+                <div class="tit_wrap">
+                  <p class="tit">GS25 안양타운점</p>
+                  <p class="how_far">143m</p>
+                </div>
+                <div class="sub_cont">
+                  <p class="address">경기도 안양시 만안구 병목안로13번길 24</p>
+                  <p class="address_num">14450</p>
+                  <p class="tel">tel.031-123-4567</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- #section end -->
+  <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <ul>
+      <li class="home">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search on">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--#search_map_page end -->
+</body>
+</html>

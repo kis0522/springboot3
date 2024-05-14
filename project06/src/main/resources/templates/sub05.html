@@ -64,11 +64,11 @@
                 <h2 th:unless="${modify} == 'modify'">책 정보 등록하기</h2>
                 <h2 th:if="${modify} == 'modify'">책 정보 수정하기</h2>
                 <form method="POST" th:action="${testForm.newTest}? @{/sub04/insert} : @{/sub05/update}" th:object="${testForm}">
-                    <div class="inputbox"><span>제목 : </span><input type="text" placeholder="책 제목을 입력해주세요." th:field="*{title}"/></div><br/>
+                    <div class="inputbox"><span>제목 : </span><input type="text" maxlength="50" placeholder="책 제목을 입력해주세요." th:field="*{title}"/></div><br/>
                     <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color:red; margin-left: 75px;"></div>
                     <div class="inputbox"><span>가격 : </span><input type="text" maxlength="10" onkeyup="inputNumberFormat(this);" placeholder="책의 가격을 입력해주세요." th:field="*{price}" class="price"/></div><br/>
                     <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color:red; margin-left: 75px;"></div>
-                    <div class="inputbox"><span>저자 : </span><input type="text" placeholder="저자의 이름을 적어주세요." th:field="*{user}"/></div><br/>
+                    <div class="inputbox"><span>저자 : </span><input type="text" maxlength="30" placeholder="저자의 이름을 적어주세요." th:field="*{user}"/></div><br/>
                     <div th:if="${#fields.hasErrors('user')}" th:errors="*{user}" style="color:red; margin-left: 75px;"></div>
                     <input type="hidden" name="id" th:value="${id}">
                     <input type="hidden" th:field="*{num}">

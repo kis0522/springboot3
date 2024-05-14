@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+<div id="my_page" class="my" data-role="page" data-url="my_page" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <h2 class="page_tit">MY</h2>
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <div class="sec profile_cont_wrap">
+      <div class="profile_cont sec_width">
+        <div class="profile_img_wrap">
+          <div class="profile_img">
+            <img src="images/profile_img.png" alt="내 프로필 사진">
+          </div>
+        </div>
+        <div class="my_info">
+          <div class="level">WELCOME</div>
+          <div class="name">홍길동님</div>
+          <div class="f_num">
+            <div class="follower">팔로워 <span class="num">20</span></div>
+            <div class="following">팔로잉 <span class="num">50</span></div>
+          </div>
+        </div>
+      </div>
+      <ul class="sec_width">
+        <li>
+          <a href="#">
+            <p class="icon eye"></p>
+            <span>최근 본</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p class="icon card"></p>
+            <span>구매내역</span>
+          </a>
+        </li>
+        <li>
+          <a href="#my_pick_page">
+            <p class="icon heart"></p>
+            <span>MY Pick</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p class="icon review"></p>
+            <span>나의 후기</span>
+          </a>
+        </li>
+        <li>
+          <a href="#recipe_write_page">
+            <p class="icon note"></p>
+            <span>레시피 작성</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="sec my_menu_wrap">
+      <ul class="sec_width">
+        <li class="on"><a href="#">결제 정보 <span></span></a>
+          <ul class="sub_menu">
+            <li><a href="#">결제·적립·할인 설정</a></li>
+            <li><a href="#">현금영수증 번호 관리</a></li>
+            <li class="margin_none"><a href="#">모바일 영수증</a></li>
+          </ul>
+        </li>
+        <li class="on"><a href="#">나의 정보 <span></span></a>
+          <ul class="sub_menu">
+            <li class="margin_none"><a href="#">개인 정보 관리</a></li>
+            <li class="margin_none"><a href="#">주소 관리</a></li>
+          </ul>
+        </li>
+        <li class="on"><a href="#">문의 및 공지 <span></span></a>
+          <ul class="sub_menu">
+            <li><a href="#">고객 센터</a></li>
+            <li><a href="#">자주 묻는 질문</a></li>
+            <li class="margin_none"><a href="#">공지 사항</a></li>
+            <li class="margin_none"><a href="#">1:1 문의</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div><!--content-->
+  <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <ul>
+      <li class="home">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user on">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--my_page_wrap-->
+</body>
+</html>

@@ -55,6 +55,7 @@
 .inputbox{width: 100%; margin-top: 20px; height: 30px; padding: 10px; box-sizing: border-box; line-height: 30px;}
 .inputbox>span{float: left;}
 .inputbox>input{float: right; border-radius: 0; border-style: solid; width: 280px; height: 30px; padding: 0 5px;}
-.insertbook .delete{position: absolute; bottom: 20px; left: 20px; width: 100px; height: 30px; border-radius: 0; border-style: solid;}
-.insertbook .menu{position: absolute; bottom: 20px; right: 140px; width: 100px; height: 30px; border-radius: 0; border-style: solid;}
-.insertbook .save{position: absolute; bottom: 20px; right: 20px; width: 100px; height: 30px; border-radius: 0; border-style: solid;}
+.insertbook .delete{left: 20px;}
+.insertbook .menu{right: 140px;}
+.insertbook .save{right: 20px;}
+.insertbook .save, .insertbook .menu, .insertbook .delete{position: absolute; bottom: 20px; width: 100px; height: 30px; border-radius: 0; border-style: solid; background: #F0FBEF;}

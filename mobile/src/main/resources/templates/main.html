@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main_page" class="home" data-role="page" data-url="main_page" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <a href="address_input.html" class="address">주소를 설정해 주세요.</a>
+      <div class="head_icon">
+        <div class="alarm"><a href="#"></a></div>
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <div class="sec search_pickup sec_width">
+      <div class="cont_box_wrap cont_box01">
+        <a href="#" class="cont_box find_stock">
+          <p class="cont_tit">재고 찾기<span class="sub_tit tit_line_height">상품 재고<br/>미리 확인 하기</span></p>
+          <p class="icon_img"></p>
+        </a>
+        <a href="#" class="cont_box pickup">
+          <p class="cont_tit">픽업 하기<span class="sub_tit tit_line_height">구매는<br/>더 편리하게</span></p>
+          <p class="icon_img"></p>
+        </a>
+      </div>
+      <div class="cont_box_wrap cont_box02">
+        <a href="#" class="cont_box my_pick">
+          <p class="cont_tit">MY Pick<span class="sub_tit">지금은 비어있어요</span></p>
+          <p class="icon_img"></p>
+        </a>
+      </div>
+    </div><!--재고찾기, 픽업, my pick-->
+    <div class="sec service sec_width">
+      <p class="cont_tit sec_width">많이 찾는 서비스<span class="sub_tit tit_line_height">많이 찾는 서비스를 모아놨어요!</span></p>
+      <div class="service_conts">
+        <ul>
+          <li>
+            <a href="#">
+              <p class="service_icon gift"></p>
+              <p class="service_tit">이벤트</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon hot"></p>
+              <p class="service_tit">인기상품</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon coupon"></p>
+              <p class="service_tit">쿠폰</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon plan"></p>
+              <p class="service_tit">기획전</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon review"></p>
+              <p class="service_tit">나의리뷰</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon card"></p>
+              <p class="service_tit">카드등록</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon search"></p>
+              <p class="service_tit">재고찾기</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon reserve"></p>
+              <p class="service_tit">택배예약</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon talk"></p>
+              <p class="service_tit">상담하기</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="service_icon call"></p>
+              <p class="service_tit">고객센터</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div><!--많이 찾는 서비스-->
+    <div class="sec recipe">
+      <p class="cont_tit sec_width">인기 레시피<span class="sub_tit tit_line_height">어제 제일 많이 본 인기있는 레시피 모음</span></p>
+      <div class="swiper recipe_tab">
+        <ul class="cf swiper-wrapper tab_menu">
+          <li class="fl swiper-slide on"><a href="#">컵라면</a></li>
+          <li class="fl swiper-slide"><a href="#">삼각김밥</a></li>
+          <li class="fl swiper-slide"><a href="#">김밥</a></li>
+          <li class="fl swiper-slide"><a href="#">아이스크림</a></li>
+          <li class="fl swiper-slide"><a href="#">음료수</a></li>
+          <li class="fl swiper-slide"><a href="#">과자</a></li>
+        </ul>
+      </div>
+      <div class="recipe_conts">
+        <div class="swiper recipe_cont01">
+          <ul class="cf swiper-wrapper">
+            <li class="fl swiper-slide">
+              <a href="#">
+                <p class="recipe_img img"><img src="images/recipe_cont_img01.jpg" alt="레시피 이미지"></p>
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <p class="recipe_img img"><img src="images/recipe_cont_img02.jpg" alt="레시피 이미지"></p>
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.6</p>
+                    <p class="rview_num">(70)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <p class="recipe_img img"><img src="images/recipe_cont_img03.jpg" alt="레시피 이미지"></p>
+                <div class="cont_info">
+                  <p class="tit">마크정식 리뉴얼 레시피</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.8</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <p class="recipe_img img"><img src="images/recipe_cont_img01.jpg" alt="레시피 이미지"></p>
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <p class="recipe_img img"><img src="images/recipe_cont_img02.jpg" alt="레시피 이미지"></p>
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper recipe_cont02">
+          <ul class="cf swiper-wrapper">
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.6</p>
+                    <p class="rview_num">(70)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">마크정식 리뉴얼 레시피</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.8</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper recipe_cont03">
+          <ul class="cf swiper-wrapper">
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.6</p>
+                    <p class="rview_num">(70)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">마크정식 리뉴얼 레시피</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.8</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper recipe_cont04">
+          <ul class="cf swiper-wrapper">
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.6</p>
+                    <p class="rview_num">(70)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">마크정식 리뉴얼 레시피</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.8</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper recipe_cont05">
+          <ul class="cf swiper-wrapper">
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.6</p>
+                    <p class="rview_num">(70)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">마크정식 리뉴얼 레시피</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.8</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper recipe_cont06">
+          <ul class="cf swiper-wrapper">
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.6</p>
+                    <p class="rview_num">(70)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img03.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">마크정식 리뉴얼 레시피</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.8</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img01.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">컵라면과 김밥은 항상 옳다!!!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="fl swiper-slide">
+              <a href="#">
+                <img src="images/recipe_cont_img02.jpg" alt="레시피 이미지" class="recipe_img img">
+                <div class="cont_info">
+                  <p class="tit">짜파게티와 불짬뽕의 조합은 존맛!</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!--인기 레시피-->
+  </div><!--content-->
+  <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <ul>
+      <li class="home on">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--main_page_wrap-->
+</body>
+</html>

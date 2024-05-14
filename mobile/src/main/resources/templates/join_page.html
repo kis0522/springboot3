@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<th:block layout:fragment="css">
+  <style>
+        .fieldError{color:#bd2130;}
+    </style>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:inline="javascript">
+        $(document).ready(function(){
+            var errorMessage = [[${errorMessage}]];
+            if(errorMessage != null){
+                alert(errorMessage);
+            }
+        });
+    </script>
+</th:block>
+
+<body>
+<div id="join_page" class="join" data-role="page" data-url="join_page" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <h2 class="page_tit">회원가입</h2>
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <form action="/login_page" role="form" class="sec sec_width" data-ajax="false" method="get" th:object="${mobileFormDto}">
+      <fieldset class="user_input_wrap">
+        <label th:for="name">이름</label>
+        <input type="text" th:field="*{name}" class="user_input" placeholder="이름을 입력해 주세요."/>
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="fieldError">
+          Incorrect data
+        </p>
+      </fieldset>
+      <fieldset class="user_input_wrap">
+        <label th:for="email">이메일</label>
+        <input type="email" th:field="*{email}" class="user_input" placeholder="이메일을 입력해 주세요."/>
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">
+          Incorrect data
+        </p>
+      </fieldset>
+      <fieldset class="user_input_wrap">
+        <label th:for="password">비밀번호</label>
+        <input type="password" th:field="*{password}" class="user_input" placeholder="비밀번호를 입력해 주세요."/>
+        <span class="user_icon pw_eye off"></span>
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">
+          Incorrect data
+        </p>
+      </fieldset>
+      <fieldset class="user_input_wrap">
+        <label th:for="address">주소</label>
+        <input type="text" th:field="*{address}" class="user_input" placeholder="주소를 입력해 주세요."/>
+        <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">
+          Incorrect data
+        </p>
+      </fieldset>
+      <button type="submit" class="join_btn">회원가입</button>
+      <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
+    </form>
+  </div><!--content-->
+  <div class="ui_fixed" data-role="footer" data-position="fixed">
+    <ul>
+      <li class="home">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user on">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--join_page_wrap-->
+</body>
+</html>

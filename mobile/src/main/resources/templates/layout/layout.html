@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>편밥</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fakeLoader.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/fakeLoader.js"></script>
+    <script src="js/search_map.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+                function loadFile(input,i) {
+                    var file = input.files[0];
+                    var text = 'fileimg'+i;
+
+                    var img = document.getElementById(text);
+                    img.src = URL.createObjectURL(file);
+                };
+    </script>
+    <th:block layout:fragment="script"></th:block>
+    <th:block layout:fragment="css"></th:block>
+</head>
+<body>
+<div layout:fragment="content"></div>
+<div id="login_alert">
+    <div class="alert_box">
+        <div class="alert_text">
+            로그인이 필요한 서비스입니다. <br/>
+            로그인 하시겠어요?
+        </div>
+        <div class="btn_wrap">
+            <a href="/main_page" class="cancell" type="reset">취소</a>
+            <a href="/login_page" class="check" type="submit">확인</a>
+        </div>
+    </div>
+</div><!--login_alert-->
+<div id="delete_img">
+    <div class="alert_box">
+        <div class="alert_text">
+            이미지를 <br/>
+            삭제 하시겠습니까?
+        </div>
+        <div class="btn_wrap">
+            <a href="#" class="cancell" type="reset">취소</a>
+            <a href="#" class="check" type="submit">확인</a>
+        </div>
+    </div>
+</div><!-- delete_img -->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+<div id="search_page" class="search" data-role="page" data-url="search_page" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <input type="search" name="search" class="main_search" placeholder="검색어를 입력해 주세요.">
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <div class="sec">
+      <div class="recent_wrap sec_width">
+        <div class="tit_wrap">
+          <p class="tit">최근검색어</p>
+          <a href="#" class="all_remove">전체삭제</a>
+        </div>
+        <ul>
+          <li class="nope"><a href="#">최근 검색어가 없어요.</a></li>
+          <li class="search_word"><a href="#search_info_recipe_page">라라스윗1</a><span class="remove"></span></li>
+          <li class="search_word"><a href="#">라라스윗2</a><span class="remove"></span></li>
+          <li class="search_word"><a href="#">라라스윗3</a><span class="remove"></span></li>
+          <li class="search_word"><a href="#">라라스윗4</a><span class="remove"></span></li>
+          <li class="search_word"><a href="#">라라스윗5</a><span class="remove"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="search_ranking_wrap sec_width">
+        <p class="tit">지금 많이<br>검색되고 있어요!</p>
+        <ol class="ranking_list">
+          <li><a href="#search_info_recipe_page">라라스윗</a><span class="icon nope"></span></li>
+          <li><a href="#">망그러진곰</a><span class="icon nope"></span></li>
+          <li><a href="#">연세</a><span class="icon down"></span></li>
+          <li><a href="#">김밥</a><span class="icon up"></span></li>
+          <li><a href="#">대왕 비빔면</a><span class="icon up"></span></li>
+          <li><a href="#">먹태깡</a><span class="icon down"></span></li>
+          <li><a href="#">명란마요</a><span class="icon up"></span></li>
+          <li><a href="#">저당 아이스크림</a><span class="icon up"></span></li>
+          <li><a href="#">밀크클래식</a><span class="icon down"></span></li>
+          <li><a href="#">맥주</a><span class="icon up"></span></li>
+        </ol>
+        <div class="event_bn_wrap">
+          <div class="event_text">
+            <p class="type">이벤트</p>
+            <p class="tit">리얼프라이스<br>장바구니 증정 이벤트</p>
+            <p class="sub">선착순 100% 당첨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!--content-->
+  <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <ul>
+      <li class="home">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search on">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--search_main_page_wrap-->
+</body>
+</html>

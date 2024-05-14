@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<body>
+<div id="my_pick_page" class="my_pick" data-role="page" data-url="my_pick_page" layout:fragment="content">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <h2 class="page_tit">MY Pick</h2>
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <div class="sec">
+      <ul class="tab_menu sec_width">
+        <li class="on"><a href="#">레시피</a></li>
+        <li class="line"><a href="#">편의점 상품</a></li>
+      </ul>
+    </div>
+    <div class="list_wrap sec">
+      <div class="recipe_list sec_width">
+        <ul>
+          <li>
+            <a href="#">
+              <p class="recipe_img img"><img src="images/recipe_list_img01.jpg" alt="레시피 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">'불짜파게티' 짜파게티와 불짬뽕의 조합은 생각지도 못한 맛인데 너무 맛있어버리는 레시피</p>
+                <div class="more_info01">
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                  <p class="name">홍길동</p>
+                </div>
+                <div class="more_info02">
+                  <div><p class="many icon"></p>2인분</div>
+                  <div class="last"><p class="time icon"></p>30분</div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="recipe_img img"><img src="images/recipe_list_img02.jpg" alt="레시피 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">불닭까르보 라면에 부재료 추가해서 레스토랑 파스트 따라잡기 레시피 공개</p>
+                <div class="more_info01">
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">5.0</p>
+                    <p class="rview_num">(200)</p>
+                  </div>
+                  <p class="name">hong</p>
+                </div>
+                <div class="more_info02">
+                  <div><p class="many icon"></p>2인분</div>
+                  <div class="last"><p class="time icon"></p>40분</div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="recipe_img img"><img src="images/recipe_list_img03.jpg" alt="레시피 이미지"></p>
+              <div class="cont_info">
+                <p class="tit"> 아보카도랑 편의점 치즈의 조합 최고의 술 안주!!</p>
+                <div class="more_info01">
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">3.6</p>
+                    <p class="rview_num">(10)</p>
+                  </div>
+                  <p class="name">dlfma</p>
+                </div>
+                <div class="more_info02">
+                  <div><p class="many icon"></p>3인분</div>
+                  <div class="last"><p class="time icon"></p>20분</div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="recipe_img img"><img src="images/recipe_list_img04.jpg" alt="레시피 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">특별한 날 편의점 스테이크 밀키트 활용해서 코스요리 흉내내기!!</p>
+                <div class="more_info01">
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">5.0</p>
+                    <p class="rview_num">(50)</p>
+                  </div>
+                  <p class="name">djqtdma</p>
+                </div>
+                <div class="more_info02">
+                  <div><p class="many icon"></p>2인분</div>
+                  <div class="last"><p class="time icon"></p>30분</div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="recipe_img img"><img src="images/recipe_list_img01.jpg" alt="레시피 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">‘불짜파게티’ 짜파게티와 불짬뽕의 조합은 생각지도 못한 맛인데 너무 맛있어버리는 레시피</p>
+                <div class="more_info01">
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                  <p class="name">홍길동</p>
+                </div>
+                <div class="more_info02">
+                  <div><p class="many icon"></p>2인분</div>
+                  <div class="last"><p class="time icon"></p>30분</div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="products_list sec_width">
+        <ul>
+          <li>
+            <a href="#">
+              <p class="products_img img"><img src="images/products_list_img01.jpg" alt="편의점 상품 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">삼각&#41;비빔참치마요</p>
+                <div class="more_info01">
+                  <p class="name">emart24</p>
+                  <p class="price">1,000원</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="products_img img"><img src="images/products_list_img02.jpg" alt="편의점 상품 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">컵라면&#41;오모리 김치 찌개 라면</p>
+                <div class="more_info01">
+                  <p class="name">GS25</p>
+                  <p class="price">1,600원</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="products_img img"><img src="images/products_list_img03.jpg" alt="편의점 상품 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">삼각&#41;뉴참치마요골드</p>
+                <div class="more_info01">
+                  <p class="name">GS25</p>
+                  <p class="price">1,000원</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="products_img img"><img src="images/products_list_img04.jpg" alt="편의점 상품 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">삼각&#41;듬뿍참치마요네즈</p>
+                <div class="more_info01">
+                  <p class="name">세븐일레븐</p>
+                  <p class="price">1,000원</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p class="products_img img"><img src="images/products_list_img05.jpg" alt="편의점 상품 이미지"></p>
+              <div class="cont_info">
+                <p class="tit">삼각&#41;대파라면</p>
+                <div class="more_info01">
+                  <p class="name">세븐일레븐</p>
+                  <p class="price">1,000원</p>
+                  <div class="review_wrap">
+                    <p class="star icon"></p>
+                    <p class="score">4.5</p>
+                    <p class="rview_num">(150)</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><!--content-->
+  <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
+    <ul>
+      <li class="home">
+        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search">
+        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user on">
+        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--my_pick_page_wrap-->
+</body>
+</html>
