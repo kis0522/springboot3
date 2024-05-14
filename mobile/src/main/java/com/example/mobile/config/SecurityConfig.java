@@ -1,6 +1,6 @@
 package com.example.mobile.config;
 
-/*import com.example.mobile.service.MobileService;
+import com.example.mobile.service.MobileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.formLogin(form -> form
-                .loginPage("/login_page")
+                .loginPage("/new")
                 .defaultSuccessUrl("/")
                 .usernameParameter("email")
                 .failureUrl("/login_page/error")
@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/")
         ).authorizeHttpRequests(auth -> auth
-                .requestMatchers("/css/**", "js/**").permitAll()
+                .requestMatchers("/css/**", "/js/**").permitAll()
                 .requestMatchers("/","/mobile/**","/images/**").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
@@ -41,4 +41,4 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-}*/
+}

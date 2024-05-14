@@ -8,7 +8,7 @@
     </style>
 </th:block>
 <body>
-<div id="login_page" class="login" data-role="page" data-url="login_page" data-ajax="true" layout:fragment="content">
+<div id="mobile/login_page" class="login" data-role="page" layout:fragment="content">
   <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
     <div class="header_wrap">
       <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
@@ -19,9 +19,9 @@
     </div>
   </div><!--header-->
   <div class="conts_wrap" data-role="content">
-    <form action="/" class="sec sec_width">
+    <form action="/mobile" class="sec sec_width">
       <fieldset class="user_input_wrap">
-        <label for="user_id" class="user_icon user_id_icon"></label>
+        <label th:for="email" class="user_icon user_id_icon"></label>
         <input type="email" name="email" class="user_input" placeholder="이메일을 입력해 주세요."/>
       </fieldset>
       <fieldset class="user_input_wrap">

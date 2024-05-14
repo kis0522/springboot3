@@ -3,13 +3,17 @@ package com.example.mobile.service;
 import com.example.mobile.entity.Mobile;
 import com.example.mobile.repository.MobileRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class MobileService{
+public class MobileService implements UserDetailsService {
     private final MobileRepository mobileRepository;
     public Mobile saveMobile(Mobile mobile){
         validateDuplicateMobile(mobile);
@@ -21,7 +25,7 @@ public class MobileService{
             throw new IllegalStateException("이미 가입된 회원입니다.");
         }
     }
-    /*@Override
+    @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Mobile mobile = mobileRepository.findByEmail(email);
         if(mobile == null){
@@ -33,5 +37,5 @@ public class MobileService{
                 .password(mobile.getPassword())
                 .roles(mobile.getRole().toString())
                 .build();
-    }*/
+    }
 }

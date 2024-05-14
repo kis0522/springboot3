@@ -5,27 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>편밥</title>
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fakeLoader.css">
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/swiper.js"></script>
-    <script src="js/fakeLoader.js"></script>
-    <script src="js/search_map.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-                function loadFile(input,i) {
-                    var file = input.files[0];
-                    var text = 'fileimg'+i;
-
-                    var img = document.getElementById(text);
-                    img.src = URL.createObjectURL(file);
-                };
-    </script>
-    <th:block layout:fragment="script"></th:block>
+    <link rel="stylesheet" href="/css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="/css/swiper.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fakeLoader.css">
     <th:block layout:fragment="css"></th:block>
 </head>
 <body>
@@ -54,5 +38,21 @@
         </div>
     </div>
 </div><!-- delete_img -->
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.mobile-1.4.5.min.js"></script>
+<script src="/js/swiper.js"></script>
+<script src="/js/fakeLoader.js"></script>
+<script src="/js/search_map.js"></script>
+<script src="/js/main.js"></script>
+<script>
+                function loadFile(input,i) {
+                    var file = input.files[0];
+                    var text = 'fileimg'+i;
+
+                    var img = document.getElementById(text);
+                    img.src = URL.createObjectURL(file);
+                };
+    </script>
+<th:block layout:fragment="script"></th:block>
 </body>
 </html>
