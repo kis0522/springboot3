@@ -32,7 +32,7 @@
         <li class="food_img">
           <a href="#recipe_3">
             <p class="recipe_img img">
-              <img src="images/foodimg1.png" alt="레시피 이미지"/>
+              <img src="/images/foodimg1.png" alt="레시피 이미지"/>
             </p>
             <div class="cont_info">
               <p class="tit">연두부 티라미수</p>
@@ -47,7 +47,7 @@
         <li class="food_img">
           <a href="#recipe_3">
             <p class="recipe_img img">
-              <img src="images/foodimg7.png" alt="레시피 이미지"/>
+              <img src="/images/foodimg7.png" alt="레시피 이미지"/>
             </p>
             <div class="cont_info">
               <p class="tit">생크림파이 티라미수</p>
@@ -62,7 +62,7 @@
         <li class="food_img">
           <a href="#recipe_3">
             <p class="recipe_img img">
-              <img src="images/foodimg8.jpg" alt="레시피 이미지"/>
+              <img src="/images/foodimg8.jpg" alt="레시피 이미지"/>
             </p>
             <div class="cont_info">
               <p class="tit">티라미수 라떼</p>
@@ -77,7 +77,7 @@
         <li class="food_img">
           <a href="#recipe_3">
             <p class="recipe_img img">
-              <img src="images/foodimg9.jpg" alt="레시피 이미지"/>
+              <img src="/images/foodimg9.jpg" alt="레시피 이미지"/>
             </p>
             <div class="cont_info">
               <p class="tit">티라미수 마카롱</p>
@@ -92,7 +92,7 @@
         <li class="food_img">
           <a href="#recipe_3">
             <p class="recipe_img img">
-              <img src="images/foodimg10.jpg" alt="레시피 이미지"/>
+              <img src="/images/foodimg10.jpg" alt="레시피 이미지"/>
             </p>
             <div class="cont_info">
               <p class="tit">바나나 티라미수 케익</p>
@@ -107,7 +107,7 @@
         <li class="food_img">
           <a href="#recipe_3">
             <p class="recipe_img img">
-              <img src="images/foodimg11.jpg" alt="레시피 이미지"/>
+              <img src="/images/foodimg11.jpg" alt="레시피 이미지"/>
             </p>
             <div class="cont_info">
               <p class="tit">티라미수 컵케익</p>
@@ -124,7 +124,7 @@
         <li class="food_img">
           <a href="#search_map_page">
             <p class="img">
-              <img src="images/new_tuna.png" alt=""/>
+              <img src="/images/new_tuna.png" alt=""/>
             </p>
             <div class="cont_info">
               <p class="tit">삼각)뉴참치마요골드</p>
@@ -140,7 +140,7 @@
         <li class="food_img">
           <a href="#">
             <p class="img">
-              <img src="images/crispy_tuna.png" alt=""/>
+              <img src="/images/crispy_tuna.png" alt=""/>
             </p>
             <div class="cont_info">
               <p class="tit">삼각)겉바속촉 참치마요</p>
@@ -156,7 +156,7 @@
         <li class="food_img">
           <a href="#">
             <p class="img">
-              <img src="images/bibim_tuna.png" alt=""/>
+              <img src="/images/bibim_tuna.png" alt=""/>
             </p>
             <div class="cont_info">
               <p class="tit">삼각)비빔참치마요</p>
@@ -172,7 +172,7 @@
         <li class="food_img">
           <a href="#">
             <p class="img">
-              <img src="images/full_tuna.png" alt=""/>
+              <img src="/images/full_tuna.png" alt=""/>
             </p>
             <div class="cont_info">
               <p class="tit">삼각)듬뿍참치마요네즈</p>
@@ -188,7 +188,7 @@
         <li class="food_img">
           <a href="#">
             <p class="img">
-              <img src="images/depa_ramen.png" alt=""/>
+              <img src="/images/depa_ramen.png" alt=""/>
             </p>
             <div class="cont_info">
               <p class="tit">컵라면)대파 라면</p>
@@ -204,7 +204,7 @@
         <li class="food_img">
           <a href="#">
             <p class="img">
-              <img src="images/kimchizzige.png" alt=""/>
+              <img src="/images/kimchizzige.png" alt=""/>
             </p>
             <div class="cont_info">
               <p class="tit">컵라면)오모리 김치찌개 라면</p>
@@ -223,16 +223,17 @@
   <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
     <ul>
       <li class="home">
-        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+        <a href="/" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon home"></p>홈</a>
       </li>
       <li class="search on">
-        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+        <a href="/mobile/search" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon search"></p>검색</a>
       </li>
       <li class="recipe">
-        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+        <a href="/mobile/recipe" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon recipe"></p>레시피</a>
       </li>
       <li class="user">
-        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+        <a href="#" class="ui-btn ui-corner-all on" data-role="button" data-ajax="false" sec:authorize="isAnonymous()"><p class="icon user"></p>MY</a>
+        <a href="/user/my_page" class="ui-btn ui-corner-all" data-ajax="false" sec:authorize="isAuthenticated()"><p class="icon user"></p>MY</a>
       </li>
     </ul>
   </div><!--ui_fixed-->

@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor //빈의 생성자
 public class MemberService implements UserDetailsService {
     private final MemberRepository memberRepository;
+
     public Member saveMember(Member member){
         validateDuplicateMember(member);
         return memberRepository.save(member);
@@ -33,8 +34,7 @@ public class MemberService implements UserDetailsService {
             throw new UsernameNotFoundException(email);
         }
 
-        //UserDetail을 구현하고 있는 User 객체를 반환
-        return User.builder()
+        return User.builder() //UserDetail을 구현하고 있는 User 객체를 반환
                 .username(member.getEmail())
                 .password(member.getPassword())
                 .roles(member.getRole().toString())

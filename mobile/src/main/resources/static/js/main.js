@@ -49,7 +49,7 @@ $(function(){
     }
     /* 로그인------------------------------------ */
     /* login alert */
-    var user_btn = $('.ui_fixed li.user');
+    var user_btn = $('.ui_fixed li.user .on');
     var login_alert = $('#login_alert');
     user_btn.click(function(){
         login_alert.show();
@@ -63,16 +63,16 @@ $(function(){
     });
 
     /* login, join page */
-    var user_id = $('#user_id');
-    var user_pw = $('#user_pw');
+    var user_id = $('#email');
+    var user_pw = $('#password');
     var join_user_name = $('#join_user_name');
     var join_user_id = $('#join_user_id');
     var join_user_pw = $('#join_user_pw');
     var join_user_ad = $('#join_user_ad');
     var pw_eye = $('.user_input_wrap .pw_eye');
 
-    $('#user_id').on('input', login_input_ck);
-    $('#user_pw').on('input', login_input_ck);
+    user_id.on('input', login_input_ck);
+    user_pw.on('input', login_input_ck);
     $('#join_user_name').on('input', join_input_ck);
     $('#join_user_id').on('input', join_input_ck);
     $('#join_user_pw').on('input', join_input_ck);

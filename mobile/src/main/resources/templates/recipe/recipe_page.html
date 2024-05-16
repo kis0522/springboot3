@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <body>
-<div id="recipe_page" class="recipe_menu" data-role="page" data-url="recipe_page" layout:fragment="content">
+<div id="recipe_page" class="recipe_menu" data-role="page" data-ajax="true" layout:fragment="content">
   <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
     <div class="header_wrap">
       <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
@@ -18,7 +18,7 @@
     <div class="sec sec_width">
       <ul class="recipe_menu_list">
         <li>
-          <a href="#recipe2_1">
+          <a href="/mobile/recipe2_1" data-ajax="false">
             <p class="icon icon01"></p>
             <p class="tit">도시락/김밥</p>
           </a>
@@ -77,16 +77,17 @@
   <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">
     <ul>
       <li class="home">
-        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+        <a href="/" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon home"></p>홈</a>
       </li>
       <li class="search">
-        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+        <a href="/mobile/search" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon search"></p>검색</a>
       </li>
       <li class="recipe on">
-        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+        <a href="/mobile/recipe" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon recipe"></p>레시피</a>
       </li>
       <li class="user">
-        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+        <a href="#" class="ui-btn ui-corner-all on" data-role="button" data-ajax="false" sec:authorize="isAnonymous()"><p class="icon user"></p>MY</a>
+        <a href="/user/my_page" class="ui-btn ui-corner-all" data-ajax="false" sec:authorize="isAuthenticated()"><p class="icon user"></p>MY</a>
       </li>
     </ul>
   </div><!--ui_fixed-->

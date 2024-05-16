@@ -1,4 +1,4 @@
-package com.shop.constant;
+package com.shop.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 public class AuditConfig {
     @Bean
-    public AuditorAware<String> auditorProvider(){
+    public AuditorAware<String> auditorProvider() {
         return new AuditorAwareImpl();
     }
 }

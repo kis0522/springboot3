@@ -31,7 +31,7 @@
     </div>
   </div><!--header-->
   <div class="conts_wrap" data-role="content">
-    <form action="mobile/login_page" role="form" class="sec sec_width" method="post" th:object="${mobileFormDto}">
+    <form action="/mobile/new" role="form" class="sec sec_width" method="post" th:object="${mobileFormDto}" data-ajax="false">
       <fieldset class="user_input_wrap">
         <label th:for="name">이름</label>
         <input type="text" th:field="*{name}" class="user_input" placeholder="이름을 입력해 주세요."/>
@@ -68,16 +68,17 @@
   <div class="ui_fixed" data-role="footer" data-position="fixed">
     <ul>
       <li class="home">
-        <a href="#main_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon home"></p>홈</a>
+        <a href="/" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon home"></p>홈</a>
       </li>
       <li class="search">
-        <a href="#search_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon search"></p>검색</a>
+        <a href="/mobile/search" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon search"></p>검색</a>
       </li>
       <li class="recipe">
-        <a href="#recipe_page" class="ui-btn ui-corner-all" data-role="button"><p class="icon recipe"></p>레시피</a>
+        <a href="/mobile/recipe" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon recipe"></p>레시피</a>
       </li>
       <li class="user on">
-        <a href="#" class="ui-btn ui-corner-all" data-role="button"><p class="icon user"></p>MY</a>
+        <a href="#" class="ui-btn ui-corner-all on" data-role="button" data-ajax="false" sec:authorize="isAnonymous()"><p class="icon user"></p>MY</a>
+        <a href="/user/my_page" class="ui-btn ui-corner-all" data-ajax="false" sec:authorize="isAuthenticated()"><p class="icon user"></p>MY</a>
       </li>
     </ul>
   </div><!--ui_fixed-->

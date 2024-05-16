@@ -28,17 +28,15 @@ public class MemberController {
 
     @PostMapping(value = "/new")
     public String newMember(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model){
-        //에러가 나면 회원가입으로 돌아감
         if(bindingResult.hasErrors()){
             return "member/memberForm";
         }
 
-        //try = 에러가 난 경우, catch = 에러가 나지 않았을 경우
         try {
             Member member = Member.createMember(memberFormDto, passwordEncoder);
             memberService.saveMember(member);
-        }catch (IllegalStateException e){
-            model.addAttribute("errorMessage",e.getMessage());
+        } catch (IllegalStateException e){
+            model.addAttribute("errorMessage", e.getMessage());
             return "member/memberForm";
         }
 
@@ -52,7 +50,8 @@ public class MemberController {
 
     @GetMapping(value = "/login/error")
     public String loginError(Model model){
-        model.addAttribute("loginErrorMsg","아이디 또는 비밀번호를 확인해주세요.");
+        model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요");
         return "/member/memberLoginForm";
     }
+
 }

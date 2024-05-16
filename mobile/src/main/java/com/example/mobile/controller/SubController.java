@@ -14,53 +14,66 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/mobile")
 @Controller
 @RequiredArgsConstructor
-public class controller {
+@RequestMapping(value = "mobile")
+public class SubController {
     private final MobileService mobileService;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("/")
-    public String main(){
-        return "main";
-    }
-    @GetMapping("/onboarding")
-    public String onboarding(){
-        return "onboarding";
-    }
-
-    @GetMapping("/login_page")
+    @GetMapping("/login")
     public String loginMobile(){
-        return "login_page";
+        return "login/login_page";
     }
 
-    @GetMapping("/login_page/error")
+    @GetMapping("/login/error")
     public String loginError(Model model){
         model.addAttribute("loginErrorMsg","아이디 또는 비밀번호를 확인해주세요.");
-        return "login_page";
+        return "login/login_page";
     }
 
     @GetMapping("/new")
     public String mobileForm(Model model){
         model.addAttribute("mobileFormDto",new MobileFormDto());
-        return "join_page";
+        return "login/join_page";
     }
     @PostMapping("/new")
     public String newMobile(@Valid MobileFormDto mobileFormDto, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
-            return "join_page";
+            return "login/join_page";
         }
         try{
             Mobile mobile = Mobile.createMobile(mobileFormDto, passwordEncoder);
             mobileService.saveMobile(mobile);
         }catch (IllegalStateException e){
             model.addAttribute("errorMessage",e.getMessage());
-            return "join_page";
+            return "login/join_page";
         }
-        return "redirect:/login_page";
+        return "redirect:/mobile/login";
     }
 
+    @GetMapping("/search")
+    public String search_page(){
+        return "search/search_page";
+    }
 
+    @GetMapping("/recipe")
+    public String recipe_page(){
+        return "recipe/recipe_page";
+    }
 
+    @GetMapping("/recipe2_1")
+    public String recipe2_1(){
+        return "recipe/recipe2_1";
+    }
+
+    @GetMapping("/recipe2_2")
+    public String recipe2_2(){
+        return "recipe/recipe2_2";
+    }
+
+    @GetMapping("/recipe3")
+    public String recipe3(){
+        return "recipe/recipe3";
+    }
 }

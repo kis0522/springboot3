@@ -31,7 +31,7 @@ public class Mobile {
         mobile.setAddress(mobileFormDto.getAddress());
         String password = passwordEncoder.encode(mobileFormDto.getPassword());
         mobile.setPassword(password);
-        mobile.setRole(Role.ADMIN);
+        //mobile.setRole(Role.ADMIN);
         mobile.setRole(Role.USER);
 
         return mobile;
