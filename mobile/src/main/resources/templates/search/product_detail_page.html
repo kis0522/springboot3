@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <body>
-	<div id="product_detail_page" class="product_detail" data-role="page" data-url="product_detail_page" layout:fragment="content">
+	<div id="product_detail_page" class="product_detail" data-role="page" data-ajax="true" layout:fragment="content">
         <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
             <div class="header_wrap">
                 <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
@@ -16,7 +16,7 @@
         <div class="conts_wrap" data-role="content">
             <div class="sec line">
                 <div class="product_detail_img sec_width">
-                    <img src="images/cream_bread.jpg" alt="크림대빵 상품 이미지">
+                    <img src="/images/cream_bread.jpg" alt="크림대빵 상품 이미지">
                 </div>
                 <div class="product_tit_wrap sec_width">
                     <div class="tit_wrap">
@@ -47,7 +47,7 @@
                 <div class="detail_info sec_width">
                     <p>상품 정보 제공 고시</p>
                     <div class="detail_info_img">
-                        <img src="images/product_info.jpg" alt="상품 정보 제공 고시 이미지">
+                        <img src="/images/product_info.jpg" alt="상품 정보 제공 고시 이미지">
                     </div>
                     <div class="notice">
                         *오프라인 개별 점보포부터 배달되는 상품이므로 주문하신 상품의 제조년월일 및 소비기한에 대한 정확한 확인이 어렵습니다. 본 상품의 제조년월일 및 소비기산에 대한 정보는 해당 점포로 직접 문의하여 주시기 바랍니다. 

@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <body>
-<div data-role="page" class="search_map" id="search_map_page" layout:fragment="content">
+<div data-role="page" class="search_map" id="search_map_page" layout:fragment="content" data-ajax="true">
   <div id="block" class="fakeLoader">
     <div class="fl fl-spinner spinner2"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>
   </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="product_info_wrap">
           <div class="product_wrap info_box">
-            <a href="#product_detail_page" class="product sec_width">
+            <a href="/mobile/product_detail_page" class="product sec_width" data-ajax="false">
               <div class="pd_img img"></div>
               <div class="description">
                 <div class="tit_wrap">

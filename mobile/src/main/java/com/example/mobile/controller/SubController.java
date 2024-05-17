@@ -57,6 +57,21 @@ public class SubController {
         return "search/search_page";
     }
 
+    @GetMapping("/product_detail_page")
+    public String product_detail_page(){
+        return "search/product_detail_page";
+    }
+
+    @GetMapping("/search_info_recipe_page")
+    public String search_info_recipe_page(){
+        return "search/search_info_recipe_page";
+    }
+
+    @GetMapping("/search_map_page")
+    public String search_map_page(){
+        return "search/search_map_page";
+    }
+
     @GetMapping("/recipe")
     public String recipe_page(){
         return "recipe/recipe_page";

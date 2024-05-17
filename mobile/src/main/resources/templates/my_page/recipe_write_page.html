@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <body>
-<div id="recipe_write_page" class="recipe_write" data-role="page" data-url="recipe_write_page" layout:fragment="content">
+<div id="recipe_write_page" class="recipe_write" data-role="page" data-ajax="true" layout:fragment="content">
   <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
     <div class="header_wrap">
       <!-- <h1 id="logo"><a href=""><img src="" alt=""></a></h1> -->
@@ -13,7 +13,7 @@
     </div>
   </div><!--header-->
   <div class="conts_wrap" data-role="content">
-    <form action="#my_page" id="recipe_write_form" class="write_box" method="get" data-ajax="false">
+    <form action="/user/my_page" id="recipe_write_form" class="write_box" method="get" data-ajax="false">
       <div class="write_input">
         <div class="tit_bg"><p class="write_tit">레시피 제목</p></div>
         <input type="text" placeholder="예) 소고기 미역 라면" class="tit">
@@ -208,7 +208,7 @@
                 <textarea name="recipe_list01" class="recipe_list" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 잘라주세요."></textarea>
               </div>
               <div class="photo_plus_box">
-                <label for="recipe_img01"><img src="images/insert_img.svg" alt="" id="fileimg7"/></label>
+                <label for="recipe_img01"><img src="/images/insert_img.svg" alt="" id="fileimg7"/></label>
                 <input type="file" id="recipe_img01" name="recipe_img01" accept="image/*" onchange="loadFile(this,7)" class="input_file">
               </div>
             </div>
@@ -220,7 +220,7 @@
                 <textarea name="recipe_list02" class="recipe_list" placeholder="예) 준비된 양념으로 먼저 고기를 재워 둡니다."></textarea>
               </div>
               <div class="photo_plus_box">
-                <label for="recipe_img02"><img src="images/insert_img.svg" alt="" id="fileimg8"/></label>
+                <label for="recipe_img02"><img src="/images/insert_img.svg" alt="" id="fileimg8"/></label>
                 <input type="file" id="recipe_img02" name="recipe_img02" accept="image/*" onchange="loadFile(this,8)" class="input_file">
               </div>
             </div>
@@ -236,23 +236,23 @@
         <div class="swiper complete_photo_list_wrap">
           <ul class="cf complete_photo_list swiper-wrapper">
             <li class="fl photo_plus_box swiper-slide">
-              <label for="complete_photo01"><img src="images/insert_img.svg" alt="" id="fileimg2"/></label>
+              <label for="complete_photo01"><img src="/images/insert_img.svg" alt="" id="fileimg2"/></label>
               <input type="file" id="complete_photo01" name="complete_photo01" accept="image/*" onchange="loadFile(this,2)">
             </li>
             <li class="fl photo_plus_box swiper-slide">
-              <label for="complete_photo02"><img src="images/insert_img.svg" alt="" id="fileimg3"/></label>
+              <label for="complete_photo02"><img src="/images/insert_img.svg" alt="" id="fileimg3"/></label>
               <input type="file" id="complete_photo02" name="complete_photo02" accept="image/*" onchange="loadFile(this,3)">
             </li>
             <li class="fl photo_plus_box swiper-slide">
-              <label for="complete_photo03"><img src="images/insert_img.svg" alt="" id="fileimg4"/></label>
+              <label for="complete_photo03"><img src="/images/insert_img.svg" alt="" id="fileimg4"/></label>
               <input type="file" id="complete_photo03" name="complete_photo03" accept="image/*" onchange="loadFile(this,4)">
             </li>
             <li class="fl photo_plus_box swiper-slide">
-              <label for="complete_photo04"><img src="images/insert_img.svg" alt="" id="fileimg5"/></label>
+              <label for="complete_photo04"><img src="/images/insert_img.svg" alt="" id="fileimg5"/></label>
               <input type="file" id="complete_photo04" name="complete_photo04" accept="image/*" onchange="loadFile(this,5)">
             </li>
             <li class="fl photo_plus_box swiper-slide">
-              <label for="complete_photo05"><img src="images/insert_img.svg" alt="" id="fileimg6"/></label>
+              <label for="complete_photo05"><img src="/images/insert_img.svg" alt="" id="fileimg6"/></label>
               <input type="file" id="complete_photo05" name="complete_photo05" accept="image/*" onchange="loadFile(this,6)">
             </li>
           </ul>
