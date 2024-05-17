@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <body>
-<div data-role="page" id="recipe_3" class="recipe_3" data-url="recipe_3" layout:fragment="content">
+<div data-role="page" id="recipe_3" class="recipe_3" data-ajax="true" layout:fragment="content">
     <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false" style="z-index:1000;">
         <div class="header_wrap">
             <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
@@ -16,10 +16,10 @@
     <div data-role="content">
         <div class="cook_recipe_header swiper">
             <ul class="swiper-wrapper">
-                <li class="swiper-slide"><img src="images/recipe_show_img1.png"/></li>
-                <li class="swiper-slide"><img src="images/recipe_show_img2.png"/></li>
+                <li class="swiper-slide"><img src="/images/recipe_show_img1.png"/></li>
+                <li class="swiper-slide"><img src="/images/recipe_show_img2.png"/></li>
                 <li class="swiper-slide">
-                    <img src="images/recipe_show_img3.png"/>
+                    <img src="/images/recipe_show_img3.png"/>
                     <a href="https://www.youtube.com/watch?v=Ihmn9jfrKrI&t=1s" target="_blank">
                         <div class="video_playbutton_wrap">
                             <div class="video_playbutton">
@@ -40,7 +40,7 @@
                 <div class="make_recipe_wrap">
                     <div class="make_recipe_user_wrap">
                         <div class="make_recipe_user">
-                            <img src="images/user.jpg" alt=""/>
+                            <img src="/images/user.jpg" alt=""/>
                         </div>
                         <div class="make_recipe_user_name">홍길동</div>
                     </div>
@@ -93,37 +93,37 @@
                     <li>
                         <div>
                             <div class="method">카스텔라는 슬라이스하여 자른다.</div>
-                            <img src="images/cooking_method_img1.jpg"/>
+                            <img src="/images/cooking_method_img1.jpg"/>
                         </div>
                     </li>
                     <li>
                         <div>
                             <div class="method">초콜릿은 강판에 갈거나 칼로 긁어낸다.</div>
-                            <img src="images/cooking_method_img2.jpg"/>
+                            <img src="/images/cooking_method_img2.jpg"/>
                         </div>
                     </li>
                     <li>
                         <div>
                             <div class="method">연두부를 곱게 으깬 후 크림치즈, 설탕을 넣고 섞어 연두부 크림을 만든다.</div>
-                            <img src="images/cooking_method_img3.jpg"/>
+                            <img src="/images/cooking_method_img3.jpg"/>
                         </div>
                     </li>
                     <li>
                         <div>
                             <div class="method">인스턴트커피가루에 뜨거운 물을 넣고 섞어 커피 원액을 만든다.</div>
-                            <img src="images/cooking_method_img4.jpg"/>
+                            <img src="/images/cooking_method_img4.jpg"/>
                         </div>
                     </li>
                     <li>
                         <div>
                             <div class="method">용기에 자른 카스텔라를 넣고 커피 원액 > 연두부 크림 순으로 반복하여 쌓는다.</div>
-                            <img src="images/cooking_method_img5.jpg"/>
+                            <img src="/images/cooking_method_img5.jpg"/>
                         </div>
                     </li>
                     <li>
                         <div>
                             <div class="method">갈아 둔 초콜릿을 가득 뿌려 완성한다.</div>
-                            <img src="images/cooking_method_img6.jpg"/>
+                            <img src="/images/cooking_method_img6.jpg"/>
                         </div>
                     </li>
                 </ol>
@@ -135,26 +135,27 @@
                     <p class="icon"></p>
                     <p class="review_num">&nbsp;5.0</p>
                 </div>
-                <button id="review_button">레시피 후기 남기기</button>
+                <button class="review_button off" sec:authorize="isAnonymous()">레시피 후기 남기기</button>
+                <button class="review_button on" sec:authorize="isAuthenticated()">레시피 후기 남기기</button>
             </div>
         </div>
         <div class="sec">
             <h2 class="sub_tit sec_width">포토 후기</h2>
             <div class="recipe_review_img_list swiper">
                 <ul class="swiper-wrapper">
-                    <li class="swiper-slide"><img src="images/foodimg1.png"/></li>
-                    <li class="swiper-slide"><img src="images/foodimg2.png"/></li>
-                    <li class="swiper-slide"><img src="images/foodimg3.png"/></li>
-                    <li class="swiper-slide"><img src="images/foodimg4.png"/></li>
-                    <li class="swiper-slide"><img src="images/foodimg5.png"/></li>
-                    <li class="swiper-slide"><img src="images/foodimg6.png"/></li>
+                    <li class="swiper-slide"><img src="/images/foodimg1.png"/></li>
+                    <li class="swiper-slide"><img src="/images/foodimg2.png"/></li>
+                    <li class="swiper-slide"><img src="/images/foodimg3.png"/></li>
+                    <li class="swiper-slide"><img src="/images/foodimg4.png"/></li>
+                    <li class="swiper-slide"><img src="/images/foodimg5.png"/></li>
+                    <li class="swiper-slide"><img src="/images/foodimg6.png"/></li>
                 </ul>
             </div>
             <div class="user_review_list cf sec_width">
                 <div class="user_review_wrap">
                     <div class="user_review">
                         <div class="user_profile">
-                            <img src="images/user.jpg" alt=""/>
+                            <img src="/images/user.jpg" alt=""/>
                         </div>
                         <div class="user_comment">
                             <div class="user_name">
@@ -174,13 +175,13 @@
                         </div>
                     </div>
                     <div class="user_cookimg">
-                        <img src="images/foodimg10.jpg" alt="" />
+                        <img src="/images/foodimg10.jpg" alt="" />
                     </div>
                 </div>
                 <div class="user_review_wrap">
                     <div class="user_review">
                         <div class="user_profile">
-                            <img src="images/user.jpg" alt=""/>
+                            <img src="/images/user.jpg" alt=""/>
                         </div>
                         <div class="user_comment">
                             <div class="user_name">
@@ -200,13 +201,13 @@
                         </div>
                     </div>
                     <div class="user_cookimg">
-                        <img src="images/foodimg11.jpg" alt="" />
+                        <img src="/images/foodimg11.jpg" alt="" />
                     </div>
                 </div>
                 <div class="user_review_wrap">
                     <div class="user_review">
                         <div class="user_profile">
-                            <img src="images/user.jpg" alt=""/>
+                            <img src="/images/user.jpg" alt=""/>
                         </div>
                         <div class="user_comment">
                             <div class="user_name">
@@ -226,12 +227,12 @@
                         </div>
                     </div>
                     <div class="user_cookimg">
-                        <img src="images/foodimg4.png" alt="" />
+                        <img src="/images/foodimg4.png" alt="" />
                     </div>
                 </div>
             </div>
-            <form action="#" id="cook_review" class="cook_review_wrap">
-                <div class="cook_review_body">
+            <div id="cook_review" class="cook_review_wrap">
+                <form class="cook_review_body" action="#" method="post">
                     <div class="cook_review_header">
                         <div class="cook_review_close">
                             <span></span>
@@ -277,11 +278,11 @@
                     </div>
                     <textarea name="userMessage" id="userMessage" cols="30" rows="10"></textarea>
                     <div class="review_plus">
-                        <label for="cook_review_plusimg"><img src="images/insert_img.svg" alt="" id="fileimg0"/></label>
+                        <label for="cook_review_plusimg"><img src="/images/insert_img.svg" alt="" id="fileimg0"/></label>
                         <input type="file" name="cook_review_plusimg" id="cook_review_plusimg" onchange="loadFile(this, 0)">
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
     <div class="ui_fixed" data-role="footer" data-position="fixed" data-tap-toggle="false">

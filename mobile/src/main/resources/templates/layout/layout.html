@@ -45,14 +45,14 @@
 <!--<script src="/js/search_map.js"></script>-->
 <script src="/js/main.js"></script>
 <script>
-                function loadFile(input,i) {
-                    var file = input.files[0];
-                    var text = 'fileimg'+i;
+    function loadFile(input,i) {
+        var file = input.files[0];
+        var text = 'fileimg'+i;
 
-                    var img = document.getElementById(text);
-                    img.src = URL.createObjectURL(file);
-                };
-    </script>
+        var img = document.getElementById(text);
+        img.src = URL.createObjectURL(file);
+    };
+</script>
 <th:block layout:fragment="script"></th:block>
 </body>
 </html>

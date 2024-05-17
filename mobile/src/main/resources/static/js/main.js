@@ -49,7 +49,7 @@ $(function(){
     }
     /* 로그인------------------------------------ */
     /* login alert */
-    var user_btn = $('.ui_fixed li.user .on');
+    var user_btn = $('.ui_fixed li.user .on, .review_button.off');
     var login_alert = $('#login_alert');
     user_btn.click(function(){
         login_alert.show();
@@ -223,7 +223,7 @@ $(function(){
                         <textarea name="recipe_list`+li_count+`" class="recipe_list ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 잘라주세요."></textarea>
                     </div>
                     <div class="photo_plus_box">
-                        <label for="recipe_img0`+li_count+`"><img src="images/insert_img.svg" alt="recipe_img0`+li_count+`" id="fileimg`+(li_count+6)+`"/></label>
+                        <label for="recipe_img0`+li_count+`"><img src="/images/insert_img.svg" alt="recipe_img0`+li_count+`" id="fileimg`+(li_count+6)+`"/></label>
 						<input type="file" id="recipe_img0`+li_count+`" name="recipe_img0`+li_count+`" accept="image/*" onchange="loadFile(this,`+(li_count+6)+`)" class="input_file">
                     </div>
                 </div>
@@ -255,7 +255,7 @@ $(function(){
 	$('.recipe_write .recipe_photo_wrap>label').one('click',function(event){
 		$(this).css("padding","0");
         $(this).empty();
-		$(`<img src="images/white.png" alt"" id="fileimg1"/>`).appendTo(this);
+		$(`<img src="/images/white.png" alt"" id="fileimg1"/>`).appendTo(this);
 		$(this).off(event);
         
 	});
@@ -263,7 +263,7 @@ $(function(){
     //요리 순서 및 완성 사진 등록
 	var save_img;
 	$(document).on('click','.recipe_write .photo_plus_box>label, .recipe_3 .review_plus>label',function(){
-		var img = "images/insert_img.svg";
+		var img = "/images/insert_img.svg";
 		var img1 = $(this).find('img').attr('src');
 		
 		if(img != img1){
@@ -278,7 +278,7 @@ $(function(){
 		$('#delete_img').hide();
 	});
 	$(document).on('click','#delete_img .check',function(){
-		save_img.find('img').attr('src','images/insert_img.svg');
+		save_img.find('img').attr('src','/images/insert_img.svg');
 		var img_id = save_img.next().find('input').attr('id');
 		if(img_id == null){
 			img_id = save_img.find('img').attr('alt');
@@ -340,7 +340,7 @@ $(function(){
 	});
 
     /* review button */
-	$('#review_button').click(function(){
+	$('.review_button.on').click(function(){
 		$('.cook_review_wrap').show();
 	});
 	
