@@ -1,5 +1,6 @@
 package com.example.mobile.service;
 
+import com.example.mobile.adapter.MobileAdapter;
 import com.example.mobile.entity.Mobile;
 import com.example.mobile.repository.MobileRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,9 +34,13 @@ public class MobileService implements UserDetailsService {
         }
 
         return User.builder()
-                .username(mobile.getEmail())
+                .username(mobile.getName())
                 .password(mobile.getPassword())
                 .roles(mobile.getRole().toString())
                 .build();
+    }
+    public void deleteMobile(String email){
+        Mobile mobile = mobileRepository.findByEmail(email);
+        mobileRepository.deleteById();
     }
 }

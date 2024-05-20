@@ -15,4 +15,8 @@ public class MainController {
         return "onboarding";
     }
 
+    @GetMapping("/err")
+    public String errorPage(){
+        return "redirect:/";
+    }
 }

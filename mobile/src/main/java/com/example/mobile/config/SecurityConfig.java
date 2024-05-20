@@ -21,7 +21,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.formLogin(form -> form
                 .loginPage("/mobile/login") //로그인 페이지 URL 설정
-                .defaultSuccessUrl("/") //로그인 성공 시 이동할 URL 설정
+                .defaultSuccessUrl("/",true) //로그인 성공 시 이동할 URL 설정
                 .usernameParameter("email") //로그인 시 사용할 파라미터 이름으로 email을 지정
                 .failureUrl("/mobile/login/error") //로그인 실패 시 이동할 URL을 설정
                 ).logout(logout -> logout
@@ -32,11 +32,11 @@ public class SecurityConfig {
         //HttpServletRequest를 사용해서 적용
         .authorizeHttpRequests(auth -> auth
                 //permitAll() 모든 사용자 접근 가능
-                .requestMatchers("/mobile/**","/images/**", "/", "/onboarding" , "/css/**", "/js/**").permitAll()
-                //user 유저 권한을 가져야지만 접근 가능
-                .requestMatchers("/user/**").hasRole("USER")
-                //admin 어드민 권한을 가져야지만 접근 가능
-                .requestMatchers("/admin/**", "/user/**").hasRole("ADMIN")
+                .requestMatchers("/mobile/**","/images/**", "/", "/onboarding" , "/err", "/css/**", "/js/**").permitAll()
+                //user,admin 권한을 가져야지만 접근 가능
+                .requestMatchers("/user/**").hasAnyRole("USER","ADMIN")
+                //admin 권한을 가져야지만 접근 가능
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 //제외한 나머지 경로들은 모두 인증하도록 설정
                 .anyRequest().authenticated()
         )

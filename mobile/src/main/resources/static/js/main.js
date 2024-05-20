@@ -73,10 +73,10 @@ $(function(){
 
     user_id.on('input', login_input_ck);
     user_pw.on('input', login_input_ck);
-    $('#join_user_name').on('input', join_input_ck);
-    $('#join_user_id').on('input', join_input_ck);
-    $('#join_user_pw').on('input', join_input_ck);
-    $('#join_user_ad').on('input', join_input_ck);
+    join_user_name.on('input', join_input_ck);
+    join_user_id.on('input', join_input_ck);
+    join_user_pw.on('input', join_input_ck);
+    join_user_ad.on('input', join_input_ck);
     function login_input_ck() {
         var id_ck = user_id.val();
         var pw_ck = user_pw.val();
@@ -105,9 +105,11 @@ $(function(){
     pw_eye.click(function(){
         if($(this).hasClass('off')){
             user_pw.attr('type','text');
+            join_user_pw.attr('type','text');
             $(this).removeClass('off');
         }else{
             user_pw.attr('type','password');
+            join_user_pw.attr('type','password');
             pw_eye.addClass('off');
         }
     });

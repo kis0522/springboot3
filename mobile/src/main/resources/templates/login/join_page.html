@@ -41,14 +41,14 @@
       </fieldset>
       <fieldset class="user_input_wrap">
         <label th:for="email">이메일</label>
-        <input type="email" th:field="*{email}" class="user_input" placeholder="이메일을 입력해 주세요."/>
+        <input type="email" th:field="*{email}" id="join_user_id" class="user_input" placeholder="이메일을 입력해 주세요."/>
         <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">
           Incorrect data
         </p>
       </fieldset>
       <fieldset class="user_input_wrap">
         <label th:for="password">비밀번호</label>
-        <input type="password" th:field="*{password}" class="user_input" placeholder="비밀번호를 입력해 주세요."/>
+        <input type="password" th:field="*{password}" id="join_user_pw" class="user_input" placeholder="비밀번호를 입력해 주세요."/>
         <span class="user_icon pw_eye off"></span>
         <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">
           Incorrect data

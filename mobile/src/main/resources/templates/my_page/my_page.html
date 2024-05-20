@@ -24,7 +24,7 @@
         </div>
         <div class="my_info">
           <div class="level">WELCOME</div>
-          <div class="name">홍길동님</div>
+          <div class="name" th:text="|${name}님|">홍길동님</div>
           <div class="f_num">
             <div class="follower">팔로워 <span class="num">0</span></div>
             <div class="following">팔로잉 <span class="num">0</span></div>
@@ -75,8 +75,11 @@
         </li>
         <li class="on"><a href="#">나의 정보 <span></span></a>
           <ul class="sub_menu">
-            <li class="margin_none"><a href="#">개인 정보 관리</a></li>
-            <li class="margin_none"><a href="#">주소 관리</a></li>
+            <li><a href="#">개인 정보 관리</a></li>
+            <li><a href="#">주소 관리</a></li>
+            <li><a href="/mobile/logout" data-ajax="false">로그 아웃</a></li>
+            <li class="margin_none"><a href="#" data-ajax="false">회원 정보 수정</a></li>
+            <li class="margin_none"><a href="#" data-ajax="false">회원 탈퇴</a></li>
           </ul>
         </li>
         <li class="on"><a href="#">문의 및 공지 <span></span></a>
