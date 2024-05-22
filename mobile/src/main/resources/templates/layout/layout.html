@@ -16,13 +16,18 @@
 <div layout:fragment="content"></div>
 <div id="login_alert">
     <div class="alert_box">
-        <div class="alert_text">
+        <div class="alert_text" sec:authorize="isAnonymous()">
             로그인이 필요한 서비스입니다. <br/>
             로그인 하시겠어요?
         </div>
+        <div class="alert_text" sec:authorize="isAuthenticated()">
+            정말로 아이디를 <br/>
+            삭제 하시겠습니까?
+        </div>
         <div class="btn_wrap">
             <a href="#" class="cancell" type="reset">취소</a>
-            <a href="#" class="check" type="submit" onclick="location.href='/mobile/login'">확인</a>
+            <a href="#" class="check" type="submit" onclick="location.href='/mobile/login'" sec:authorize="isAnonymous()">확인</a>
+            <a href="#" class="check" type="submit" onclick="location.href='/user/delete'" sec:authorize="isAuthenticated()">확인</a>
         </div>
     </div>
 </div><!--login_alert-->

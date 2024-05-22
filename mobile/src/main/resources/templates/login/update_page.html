@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<th:block layout:fragment="css">
+  <style>
+        .fieldError{color:#bd2130;}
+    </style>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:inline="javascript">
+        $(document).ready(function(){
+            var errorMessage = [[${errorMessage}]];
+            if(errorMessage != null){
+                alert(errorMessage);
+            }
+        });
+    </script>
+</th:block>
+
+<body>
+<div id="update_page" class="update" data-role="page" layout:fragment="content" data-ajax="true">
+  <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
+    <div class="header_wrap">
+      <a href="#" class="back_btn" data-rel="back" data-direction="reverse"></a>
+      <h2 class="page_tit">회원 정보 수정</h2>
+      <div class="head_icon">
+        <div class="basket"><a href="#"></a></div>
+      </div>
+    </div>
+  </div><!--header-->
+  <div class="conts_wrap" data-role="content">
+    <form action="/user/update" role="form" class="sec sec_width" method="post" data-ajax="false">
+      <fieldset class="user_input_wrap">
+        <label>이름</label>
+        <input type="text" class="user_input" placeholder="이름을 입력해 주세요."/>
+      </fieldset>
+      <fieldset class="user_input_wrap">
+        <label>비밀번호</label>
+        <input type="password" class="user_input" placeholder="비밀번호를 입력해 주세요."/>
+        <span class="user_icon pw_eye off"></span>
+      </fieldset>
+      <fieldset class="user_input_wrap">
+        <label>주소</label>
+        <input type="text" class="user_input" placeholder="주소를 입력해 주세요."/>
+      </fieldset>
+      <button type="submit" class="join_btn">수정하기</button>
+    </form>
+  </div><!--content-->
+  <div class="ui_fixed" data-role="footer" data-position="fixed">
+    <ul>
+      <li class="home">
+        <a href="/" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon home"></p>홈</a>
+      </li>
+      <li class="search">
+        <a href="/mobile/search" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon search"></p>검색</a>
+      </li>
+      <li class="recipe">
+        <a href="/mobile/recipe" class="ui-btn ui-corner-all" data-role="button" data-ajax="false"><p class="icon recipe"></p>레시피</a>
+      </li>
+      <li class="user on">
+        <a href="#" class="ui-btn ui-corner-all on" data-role="button" data-ajax="false" sec:authorize="isAnonymous()"><p class="icon user"></p>MY</a>
+        <a href="/user/my_page" class="ui-btn ui-corner-all" data-ajax="false" sec:authorize="isAuthenticated()"><p class="icon user"></p>MY</a>
+      </li>
+    </ul>
+  </div><!--ui_fixed-->
+</div><!--join_page_wrap-->
+</body>
+</html>

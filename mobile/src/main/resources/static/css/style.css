@@ -111,6 +111,21 @@
 .join form .join_btn:hover{background: #f6f6f6;}
 .join form .join_btn.on{background: #12c39a; color: #ffffff; transition: all 0.3s;}
 
+/* join page */
+.update form{padding-top: 16px; margin: 0 auto;}
+.update form .ui-input-text{margin: 10px 0 0;}
+.update form .user_input_wrap, .join form{position: relative;}
+.update form .user_input_wrap{margin-bottom: 20px;}
+.update form input{position: relative; width: 100%; height: 35px; padding: 0 50px 0 20px;}
+.update form input::placeholder{color: #999999; font-size: 14px;}
+.update form .user_icon:after{content: ''; display: block; position: absolute; top: 50%; left: 15px; transform: translate(0, -50%); width: 12px; height: 14px; background: url(../images/input_icons.svg) no-repeat;}
+.update form .pw_eye{display: block; position: absolute; right: 15px; top: 38px; width: 20px; height: 14px; cursor: pointer;}
+.update form .pw_eye:after{width: 20px; left: 0; background-position: -40px -3px; background-size: 135px;}
+.update form .pw_eye.off:after{background-position: -63px -3px;}
+.update form .join_btn{margin-bottom: 25px; background: #f6f6f6;}
+.update form .join_btn:hover{background: #f6f6f6;}
+.update form .join_btn.on{background: #12c39a; color: #ffffff; transition: all 0.3s;}
+
 /*my page*/
 .my .conts_wrap{background: #f6f6f6;}
 .my .conts_wrap>div{margin-bottom: 10px; background: #ffffff;}

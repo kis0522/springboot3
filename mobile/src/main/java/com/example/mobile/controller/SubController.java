@@ -6,8 +6,6 @@ import com.example.mobile.service.MobileService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping(value = "mobile")
 public class SubController {
-    private final MobileService mobileService;
+    private final MobileService service;
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
@@ -46,7 +44,7 @@ public class SubController {
         }
         try{
             Mobile mobile = Mobile.createMobile(mobileFormDto, passwordEncoder);
-            mobileService.saveMobile(mobile);
+            service.saveMobile(mobile);
         }catch (IllegalStateException e){
             model.addAttribute("errorMessage",e.getMessage());
             return "login/join_page";

@@ -11,7 +11,8 @@
 <div id="main_page" class="home" data-role="page" layout:fragment="content" data-ajax="true">
   <div class="header" data-role="header" data-position="fixed" data-tap-toggle="false">
     <div class="header_wrap">
-      <a href="address_input.html" class="address">주소를 설정해 주세요.</a>
+      <a href="address_input.html" class="address" sec:authorize="isAnonymous()">주소를 설정해 주세요.</a>
+      <a href="address_input.html" class="address" th:text="${address}" sec:authorize="isAuthenticated()">주소를 설정해 주세요.</a>
       <div class="head_icon">
         <div class="alarm"><a href="#"></a></div>
         <div class="basket"><a href="#"></a></div>

@@ -49,7 +49,7 @@ $(function(){
     }
     /* 로그인------------------------------------ */
     /* login alert */
-    var user_btn = $('.ui_fixed li.user .on, .review_button.off');
+    var user_btn = $('.ui_fixed li.user .on, .review_button.off, .exit');
     var login_alert = $('#login_alert');
     user_btn.click(function(){
         login_alert.show();

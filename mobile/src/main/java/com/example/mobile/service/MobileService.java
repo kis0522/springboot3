@@ -1,6 +1,5 @@
 package com.example.mobile.service;
 
-import com.example.mobile.adapter.MobileAdapter;
 import com.example.mobile.entity.Mobile;
 import com.example.mobile.repository.MobileRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -26,21 +27,39 @@ public class MobileService implements UserDetailsService {
             throw new IllegalStateException("이미 가입된 회원입니다.");
         }
     }
+    String name;
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Mobile mobile = mobileRepository.findByEmail(email);
+        name = mobile.getName();
+
         if(mobile == null){
             throw new UsernameNotFoundException(email);
         }
 
         return User.builder()
-                .username(mobile.getName())
+                .username(mobile.getEmail())
                 .password(mobile.getPassword())
                 .roles(mobile.getRole().toString())
                 .build();
     }
-    public void deleteMobile(String email){
-        Mobile mobile = mobileRepository.findByEmail(email);
-        mobileRepository.deleteById();
+    public String getNameByEmail(String email){
+        Mobile mobile = mobileRepository.findByEmailByNative(email);
+        return mobile.getName();
     }
+    public Long getIdByEmail(String email){
+        Mobile mobile = mobileRepository.findByEmailByNative(email);
+        return mobile.getId();
+    }
+
+    public String getAddressByEmail(String email){
+        Mobile mobile = mobileRepository.findByEmailByNative(email);
+        return mobile.getAddress();
+    }
+
+    public void deleteByEmail(String email){
+        Mobile mobile = mobileRepository.findByEmailByNative(email);
+        mobileRepository.deleteById(mobile.getId());
+    }
+
 }
