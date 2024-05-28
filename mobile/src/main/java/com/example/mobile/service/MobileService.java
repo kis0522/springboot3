@@ -7,10 +7,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -43,18 +42,10 @@ public class MobileService implements UserDetailsService {
                 .roles(mobile.getRole().toString())
                 .build();
     }
-    public String getNameByEmail(String email){
-        Mobile mobile = mobileRepository.findByEmailByNative(email);
-        return mobile.getName();
-    }
-    public Long getIdByEmail(String email){
-        Mobile mobile = mobileRepository.findByEmailByNative(email);
-        return mobile.getId();
-    }
 
-    public String getAddressByEmail(String email){
+    public Mobile getMobile(String email){
         Mobile mobile = mobileRepository.findByEmailByNative(email);
-        return mobile.getAddress();
+        return mobile;
     }
 
     public void deleteByEmail(String email){
@@ -62,4 +53,7 @@ public class MobileService implements UserDetailsService {
         mobileRepository.deleteById(mobile.getId());
     }
 
+    public Mobile updateMobile(Mobile mobile){
+        return mobileRepository.save(mobile);
+    }
 }

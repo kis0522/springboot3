@@ -16,7 +16,7 @@ public class MainController {
     @GetMapping(value="/")
     public String main(Model model, @AuthenticationPrincipal User user){
         if(user != null){
-            model.addAttribute("address",service.getAddressByEmail(user.getUsername()));
+            model.addAttribute("name",service.getMobile(user.getUsername()).getName());
         }
         return "main";
     }

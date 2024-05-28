@@ -33,7 +33,7 @@ async function initMap() {
 
 	});
 
-	const iconBase ="./images/";
+	const iconBase ="/images/";
 	const icons = {
 		default_icon: {
 		  icon: iconBase + "marker_icon.png",

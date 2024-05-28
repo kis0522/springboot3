@@ -1,12 +1,19 @@
 package com.example.mobile.controller;
 
+import com.example.mobile.dto.MobileFormDto;
+import com.example.mobile.entity.Mobile;
 import com.example.mobile.service.MobileService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,10 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "user")
 public class UserController {
     private final MobileService service;
+    private final PasswordEncoder passwordEncoder;
 
     @GetMapping(value = "/my_page")
     public String my_page(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("name",service.getNameByEmail(user.getUsername()));
+        model.addAttribute("name",service.getMobile(user.getUsername()).getName());
         return "my_page/my_page";
     }
 
@@ -38,8 +46,16 @@ public class UserController {
     }
 
     @GetMapping("/update_page")
-    public String updatePage(){
+    public String updatePage(Model model,@AuthenticationPrincipal User user){
+        model.addAttribute("mobileFormDto", service.getMobile(user.getUsername()));
         return "login/update_page";
     }
 
+    @PostMapping("/update_page")
+    public String newMobile(@Valid MobileFormDto mobileFormDto,@AuthenticationPrincipal User user){
+        service.deleteByEmail(user.getUsername());
+        Mobile mobile = Mobile.createMobile(mobileFormDto, passwordEncoder);
+        service.updateMobile(mobile);
+        return "redirect:/user/my_page";
+    }
 }

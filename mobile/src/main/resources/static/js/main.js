@@ -116,17 +116,17 @@ $(function(){
 
     /* 마이------------------------------------ */
     /* my page menu toggle */
-    var my_menu = $('.my .my_menu_wrap>ul>li');
+    var my_menu = $('.my .my_menu_wrap>ul>li>a');
     my_menu.each(function(){
         $(this).click(function(){
-            if($(this).hasClass('on')){
-                $(this).find('.sub_menu').slideUp(300);
-                $(this).find('>a span').css({"background-position":"-20px 0"});
-                $(this).removeClass('on');
+            if($(this).parents('li').hasClass('on')){
+                $(this).parents('li').find('.sub_menu').stop(true,true).slideUp(300);
+                $(this).parents('li').find('>a span').css({"background-position":"-20px 0"});
+                $(this).parents('li').removeClass('on');
             }else{
-                $(this).find('.sub_menu').slideDown(300);
-                $(this).find('>a span').css({"background-position":"0 0"});
-                $(this).addClass('on');
+                $(this).parents('li').find('.sub_menu').stop(true,true).slideDown(300);
+                $(this).parents('li').find('>a span').css({"background-position":"0 0"});
+                $(this).parents('li').addClass('on');
             };
         });
     });
